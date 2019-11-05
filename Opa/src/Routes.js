@@ -2,7 +2,7 @@ import React from 'react';
 import { Text, View } from 'react-native';
 import { createAppContainer } from 'react-navigation';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
-import {Icon} from 'react-native-elements';
+import Icon from 'react-native-vector-icons/Ionicons';
 import OpaTelaHome from './components/OpaTelaHome';
 import OpaTelaMapa from './components/OpaTelaMapa';
 
@@ -20,9 +20,25 @@ class SettingsScreen extends React.Component {
 }
 
 const TabNavigator = createBottomTabNavigator({
-    Home: OpaTelaHome,
-    Mapa: OpaTelaMapa,
+    Home: {
+        screen: OpaTelaHome,
+        navigationOptions: {
+            tabBarLabel: 'Home',
+            tabBarIcon: ({ tintColor }) => (
+                <Icon name='ios-home' size={20} />
+            )
+        }
     },
+    Mapa: {
+        screen: OpaTelaMapa,
+        navigationOptions: {
+            tabBarLabel: 'Mapa',
+            tabBarIcon: ({ tintColor }) => (
+                <Icon name='ios-person' size={20} />
+            )
+        }
+    }
+},
     {
         tabBarOptions: {
             activeTintColor: '#ff5c5c',
