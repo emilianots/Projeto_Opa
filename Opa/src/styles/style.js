@@ -1,11 +1,20 @@
 import { StyleSheet } from 'react-native'
 
-const corPrimaria = 'blue'
+const corPrimaria = '#ff5c5c'
 
 const estilo = StyleSheet.create({
     app:{
         flex: 1,
         alignItems: 'center'
+    },
+
+    cabecalho:{
+        backgroundColor: corPrimaria,
+        alignItems: 'center'
+    },
+
+    cabecalhoTexto:{
+
     },
 
     imputPrimario:{

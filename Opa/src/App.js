@@ -3,21 +3,23 @@ import { View, Text, TextInput } from 'react-native';
 import estilo from './styles/style';
 import {OpaInput, OpaBotao} from './components/commons/index';
 
+import TabNavigator from './Routes'
+
 
 export default class App extends Component {
 
   render() {
     return (
-      <View style={estilo.app}>
-        <Text>
-          Bem vindo ao OPA!
-        </Text>
-        <OpaInput placeholder='Pesquisar'/>
-        <OpaBotao>
-          Botão generico
-        </OpaBotao>
-      </View>
-
+      // <View style={estilo.app}>
+      //   <Text>
+      //     Bem vindo ao OPA!
+      //   </Text>
+      //   <OpaInput placeholder='Pesquisar'/>
+      //   <OpaBotao>
+      //     Botão generico
+      //   </OpaBotao>
+      // </View>
+      <TabNavigator/>
     )
   }
 }
