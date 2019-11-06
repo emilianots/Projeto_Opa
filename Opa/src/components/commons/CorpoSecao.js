@@ -13,7 +13,7 @@ import { thisExpression } from '@babel/types';
 */
 class CorpoSecao extends Component {
 
-    renderItemList(nome, id, nota = 0.0, imgURL = null) { // metodo que renderiza umcard de restaurante por vez
+    renderItemList(nome, id, nota, imgURL = null) { // metodo que renderiza umcard de restaurante por vez
         // os valores recebidos devem ser ajustados futuramente para mostrar mais dados em cada card
         return (
             <TouchableOpacity style={estilo.restauranteCard} onPress={() => this.props.navigation.navigate("Cardapio", { id })}>

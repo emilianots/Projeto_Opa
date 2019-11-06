@@ -80,28 +80,30 @@ const estilo = StyleSheet.create({
         justifyContent: 'center'
     },
     restauranteNota:{
-        width: 30,
+        minWidth: 30,
         position: 'absolute',
         top: 10,
         left: 10,
-        borderRadius: 4,
-        paddingHorizontal: 5,
-        backgroundColor: 'yellow',
+        paddingHorizontal: 7,
+        backgroundColor: '#ffcb5c',
         borderRadius: 20,
     },
 
     restauranteNome:{
-        maxWidth: '90%',
-        minWidth: '40%',
+        width: '80%',
         bottom: -5,
         backgroundColor: 'white',
         paddingHorizontal: 7,
         paddingVertical: 3,
         borderRadius: 10,
         position: 'absolute',
-        textAlign: 'center'
+        textAlign: 'center',
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.8,
+        shadowRadius: 1,
+        elevation: 4,
     }
-
 })
 
 export default estilo

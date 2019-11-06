@@ -18,11 +18,11 @@ export default class OpaTelaCardapio extends Component{
         }
     }
 
-    getRestaurante(){
+    renderCorpo(){
         let id = this.props.navigation.getParam('id', null);
         if(!id){
             return(
-                <OpaSpinner size={100}/>
+                <OpaSpinner tamanho={50}/>
             )
         }
         return(
@@ -33,12 +33,10 @@ export default class OpaTelaCardapio extends Component{
     }
 
     render(){
-        
-
         return(
-            <View style={{flex: 1}}>
-                <Cabecalho titulo={this.props.navigation.getParam('id', null)}/>
-                {this.getRestaurante()}
+            <View style={{flex: 1, alignItems: 'center'}}>
+                <Cabecalho/>
+                {this.renderCorpo()}
             </View>
         )
     }
