@@ -49,9 +49,12 @@ export default class OpaTelaHome extends Component {
             <View style={{ flex: 1, alignItems: 'center' }}>
                 <Cabecalho />
                 <ScrollView>
-                    <SecaoHome titulo="Destaques" destaques={this.state.restaurantes}></SecaoHome>
-                    <SecaoHome titulo="Populares" destaques={this.state.restaurantes}></SecaoHome>
-                    <SecaoHome titulo="Abertos" destaques={this.state.restaurantes}></SecaoHome>
+                    {/* 
+                        Abaixo foi passada a propriedade navigation para poder ser realizada a navegação pelos componentes filhos
+                    */}
+                    <SecaoHome navigation={this.props.navigation} titulo="Destaques" destaques={this.state.restaurantes}></SecaoHome>
+                    <SecaoHome navigation={this.props.navigation} titulo="Populares" destaques={this.state.restaurantes}></SecaoHome>
+                    <SecaoHome navigation={this.props.navigation} titulo="Abertos" destaques={this.state.restaurantes}></SecaoHome>
 
                 </ScrollView>
             </View>

@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { View, Text, ScrollView, FlatList, TouchableOpacity } from 'react-native';
+import { NavigationActions } from 'react-navigation';
 
 import estilo from '../../styles/style';
+import { thisExpression } from '@babel/types';
 
 
 /* 
@@ -14,7 +16,7 @@ class CorpoSecao extends Component {
     renderItemList(nome, id, nota = 0.0, imgURL = null) { // metodo que renderiza umcard de restaurante por vez
         // os valores recebidos devem ser ajustados futuramente para mostrar mais dados em cada card
         return (
-            <TouchableOpacity style={estilo.restauranteCard} onPress={()=> console.log(id)}>
+            <TouchableOpacity style={estilo.restauranteCard} onPress={() => this.props.navigation.navigate("Cardapio", { id })}>
                 <Text style={estilo.restauranteNota}>{nota}</Text>
                 <View style={estilo.restauranteImg}>
                     <Text>LOGO</Text>

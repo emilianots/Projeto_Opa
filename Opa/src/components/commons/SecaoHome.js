@@ -18,7 +18,7 @@ class SecaoHome extends Component {
             // de cada restaurante mais seu nome e avaliação
             <View>
                 <CabecalhoSecao titulo={this.props.titulo}/>
-                <CorpoSecao lista={this.props.destaques}/>
+                <CorpoSecao navigation={this.props.navigation} lista={this.props.destaques}/>
             </View>
         )
     }
