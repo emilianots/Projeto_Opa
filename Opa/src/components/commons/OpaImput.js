@@ -7,8 +7,12 @@ class OpaInput extends Component {
 
     render() {
         return (
-            <View>
-                <TextInput style={estilo.imputPrimario} placeholder={this.props.placeholder} placeholderTextColor='white' valor={this.props.valor} />
+            <View style={{width: '100%', alignItems: 'center'}}>
+                <TextInput
+                    style={estilo.imputPrimario}
+                    placeholder={this.props.placeholder}
+                    placeholderTextColor='gray'
+                    valor={this.props.valor} />
             </View>
         )
     }
