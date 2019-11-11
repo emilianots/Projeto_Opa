@@ -56,7 +56,7 @@ class OpaTelaHome extends Component {
         //abaixo, chama o componente que renderiza o cabeçalho com a barra de pesquisa
         // e chama tbm o componente responsavel por renderizar a seção de restarantes específicas
         return (
-            <View style={{ flex: 1, alignItems: 'center' }}>
+            <View style={{ flex: 1, alignItems: 'center', backgroundColor: '#eee' }}>
                 <Cabecalho />
                 {/* <ScrollView> */}
                 {/* 
