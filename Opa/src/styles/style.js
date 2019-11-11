@@ -10,6 +10,7 @@ const estilo = StyleSheet.create({
 
     cabecalho: {
         width: '105%',
+        marginBottom: 15,
         paddingHorizontal: 20,
         backgroundColor: corPrimaria,
         alignItems: 'center',
@@ -50,7 +51,7 @@ const estilo = StyleSheet.create({
         alignItems: 'center'
     },
     secaoEtiqueta: {
-        minWidth: '30%',
+        minWidth: '35%',
         marginRight: 40,
         alignItems: 'flex-end',
         borderTopRightRadius: 100,

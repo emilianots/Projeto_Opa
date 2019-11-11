@@ -16,7 +16,7 @@ class CorpoSecao extends Component {
     renderItemList(nome, id, nota, imgURL = null) { // metodo que renderiza umcard de restaurante por vez
         // os valores recebidos devem ser ajustados futuramente para mostrar mais dados em cada card
         return (
-            <TouchableOpacity style={estilo.restauranteCard} onPress={() => this.props.navigation.navigate("Cardapio", { id })}>
+            <TouchableOpacity style={estilo.restauranteCard} onPress={() => console.log(id)}>
                 <Text style={estilo.restauranteNota}>{nota}</Text>
                 <View style={estilo.restauranteImg}>
                     <Text>LOGO</Text>
@@ -29,7 +29,7 @@ class CorpoSecao extends Component {
 
     render() {
         return (
-            
+
             // abaixo a view que renderiza a lista com os cards mostrandos todos os restaurantes da lista
             // cria a track horizontal com scroll
             <View style={{ width: '100%' }}>

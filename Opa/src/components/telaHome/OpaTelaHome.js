@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, ScrollView } from 'react-native';
 import { Cabecalho, SecaoHome, OpaSpinner, CabecalhoSecao, CorpoSecao } from '../commons/index';
+import TelaListarRestaurante from './TelaListartRestaurante'
 
 import * as firebase from 'firebase';
 import 'firebase/firestore';
@@ -21,8 +22,9 @@ class OpaTelaHome extends Component {
     static navigationOptions = {
         title: "Bem Vindo ao Opa!",
         headerStyle: {
-            textAlling: 'center'
-        }
+            backgroundColor: '#ff5c5c',
+        },
+        headerLayoutPreset: 'center'
     }
 
     atualizarLista(query) { // metodo enviado para atializar a lista de restaurantes cadastrados
@@ -56,11 +58,11 @@ class OpaTelaHome extends Component {
         return (
             <View style={{ flex: 1, alignItems: 'center' }}>
                 <Cabecalho />
-                <ScrollView>
-                    {/* 
+                {/* <ScrollView> */}
+                {/* 
                         Abaixo foi passada a propriedade navigation para poder ser realizada a navegação pelos componentes filhos
                     */}
-                    <View>
+                {/* <View>
                         <CabecalhoSecao titulo="Destaques" />
                         <CorpoSecao navigation={this.props.navigation} lista={this.state.restaurantes} />
                     </View>
@@ -75,7 +77,8 @@ class OpaTelaHome extends Component {
                         <CorpoSecao navigation={this.props.navigation} lista={this.state.restaurantes} />
                     </View>
 
-                </ScrollView>
+                </ScrollView> */}
+                <TelaListarRestaurante resultado={this.state.restaurantes} />
             </View>
         )
     }
