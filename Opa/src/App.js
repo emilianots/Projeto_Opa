@@ -3,7 +3,7 @@ import { View, Text } from 'react-native'
 import TabNavigator from './Routes'
 
 import * as firebase from 'firebase';
-import { firebaseConfig } from '../firebaseData/firebaseKey'
+import firebaseConfig from '../firebaseData/firebaseKey'
 
 
 export default class App extends Component {

@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 import {View, Text} from 'react-native';
-import {OpaBotao, Cabecalho, OpaSpinner} from './commons/index';
+import {OpaBotao, Cabecalho, OpaSpinner} from '../commons/index';
 
 import * as firebase from 'firebase';
 import 'firebase/firestore';
 
 
-export default class OpaTelaCardapio extends Component{
+class OpaTelaCardapio extends Component{
 
     constructor(props){
         super(props);
@@ -41,3 +41,5 @@ export default class OpaTelaCardapio extends Component{
         )
     }
 }
+
+export {OpaTelaCardapio};

@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import {View, Text} from 'react-native';
-import {OpaBotao, Cabecalho} from './commons/index';
+import {OpaBotao, Cabecalho} from '../commons/index';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-export default class OpaTelaComanda extends Component{
+class OpaTelaComanda extends Component{
 
     render(){
         return(
@@ -12,3 +12,5 @@ export default class OpaTelaComanda extends Component{
         )
     }
 }
+
+export {OpaTelaComanda};

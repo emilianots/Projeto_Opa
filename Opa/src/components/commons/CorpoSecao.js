@@ -29,9 +29,9 @@ class CorpoSecao extends Component {
 
     render() {
         return (
+            
             // abaixo a view que renderiza a lista com os cards mostrandos todos os restaurantes da lista
             // cria a track horizontal com scroll
-
             <View style={{ width: '100%' }}>
                 <FlatList
                     data={this.props.lista}

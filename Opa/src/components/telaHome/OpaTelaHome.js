@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { View, Text, ScrollView } from 'react-native';
-import { Cabecalho, SecaoHome, OpaSpinner } from './commons/index';
+import { Cabecalho, SecaoHome, OpaSpinner, CabecalhoSecao, CorpoSecao } from '../commons/index';
 
 import * as firebase from 'firebase';
 import 'firebase/firestore';
 
 
-export default class OpaTelaHome extends Component {
+class OpaTelaHome extends Component {
 
     constructor(props) {
         super(props);
@@ -15,6 +15,13 @@ export default class OpaTelaHome extends Component {
         this.state = {
             restaurantes: [],
             loading: true
+        }
+    }
+
+    static navigationOptions = {
+        title: "Bem Vindo ao Opa!",
+        headerStyle: {
+            textAlling: 'center'
         }
     }
 
@@ -53,12 +60,25 @@ export default class OpaTelaHome extends Component {
                     {/* 
                         Abaixo foi passada a propriedade navigation para poder ser realizada a navegação pelos componentes filhos
                     */}
-                    <SecaoHome navigation={this.props.navigation} titulo="Destaques" destaques={this.state.restaurantes}></SecaoHome>
-                    <SecaoHome navigation={this.props.navigation} titulo="Populares" destaques={this.state.restaurantes}></SecaoHome>
-                    <SecaoHome navigation={this.props.navigation} titulo="Abertos" destaques={this.state.restaurantes}></SecaoHome>
+                    <View>
+                        <CabecalhoSecao titulo="Destaques" />
+                        <CorpoSecao navigation={this.props.navigation} lista={this.state.restaurantes} />
+                    </View>
+
+                    <View>
+                        <CabecalhoSecao titulo="Recomendados" />
+                        <CorpoSecao navigation={this.props.navigation} lista={this.state.restaurantes} />
+                    </View>
+
+                    <View>
+                        <CabecalhoSecao titulo="Perto de você" />
+                        <CorpoSecao navigation={this.props.navigation} lista={this.state.restaurantes} />
+                    </View>
 
                 </ScrollView>
             </View>
         )
     }
 }
+
+export { OpaTelaHome };

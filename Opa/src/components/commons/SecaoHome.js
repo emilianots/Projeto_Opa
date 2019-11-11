@@ -17,8 +17,7 @@ class SecaoHome extends Component {
             // renderiza a etiqueta/cabeçalho da seção mais o corpo da seção onde deverá ter as imagens
             // de cada restaurante mais seu nome e avaliação
             <View>
-                <CabecalhoSecao titulo={this.props.titulo}/>
-                <CorpoSecao navigation={this.props.navigation} lista={this.props.destaques}/>
+                {this.props.children}
             </View>
         )
     }

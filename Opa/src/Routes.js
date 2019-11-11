@@ -1,18 +1,32 @@
 import React from 'react';
 import { Text, View } from 'react-native';
-import { createAppContainer, createSwitchNavigator } from 'react-navigation';
+import { createAppContainer, } from 'react-navigation';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
+import { createStackNavigator } from 'react-navigation-stack'
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import OpaTelaHome from './components/OpaTelaHome';
-import OpaTelaMapa from './components/OpaTelaMapa';
-import OpaTelaComanda from './components/OpaTelaComanda';
-import OpaTelaCardapio from './components/OpaTelaCardapio';
-import OpaTelaPerfil from './components/OpaTelaPerfil';
+import {
+    //Telas principais do app
+    OpaTelaHome,
+    OpaTelaMapa,
+    OpaTelaComanda,
+    OpaTelaCardapio,
+    OpaTelaPerfil
+} from './components/index';
 
+
+const StackHome = createStackNavigator({
+    HomeScreen: {
+        screen: OpaTelaHome,
+    }
+},
+    {
+        initialRouteName: 'HomeScreen'
+    }
+)
 
 const TabNavigator = createBottomTabNavigator({
     Home: {
-        screen: OpaTelaHome,
+        screen: StackHome,
         navigationOptions: {
             tabBarLabel: 'Home'
         }
