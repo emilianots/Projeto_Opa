@@ -7,7 +7,7 @@ export default class TelaListarRestaurante extends Component {
 
     renderItemList(nome, key, nota, imgULR) {
         return (
-            <TouchableOpacity underlayColor='red' onPress={()=> console.log('foi')}>
+            <TouchableOpacity underlayColor='red' >
                 <View style={{ backgroundColor: 'white', width: '100%', flexDirection: 'row', borderRadius: 7, marginBottom: 10 }}>
 
                     <View style={{ width: 90, height: 90, backgroundColor: '#ccc', borderRadius: 7, justifyContent: 'center', alignItems: 'center', marginRight: 20 }}>
@@ -28,7 +28,7 @@ export default class TelaListarRestaurante extends Component {
 
     render() {
         return (
-            <View style={{ flex: 1, width: '100%', paddingHorizontal: 15 }}>
+            <View style={{ flex: 1, width: '97%', paddingHorizontal: 15, marginBottom: 20 }}>
                 <FlatList
                     data={this.props.resultado}
                     showsVerticalScrollIndicator={false}

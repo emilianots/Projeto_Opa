@@ -58,27 +58,36 @@ class OpaTelaHome extends Component {
         return (
             <View style={{ flex: 1, alignItems: 'center', backgroundColor: '#eee' }}>
                 <Cabecalho />
-                {/* <ScrollView> */}
-                {/* 
+                <ScrollView>
+                    {/* 
                         Abaixo foi passada a propriedade navigation para poder ser realizada a navegação pelos componentes filhos
                     */}
-                {/* <View>
+                    <View style={{marginBottom: 20}}>
                         <CabecalhoSecao titulo="Destaques" />
                         <CorpoSecao navigation={this.props.navigation} lista={this.state.restaurantes} />
                     </View>
 
-                    <View>
+                    <View style={{marginBottom: 20}}>
                         <CabecalhoSecao titulo="Recomendados" />
                         <CorpoSecao navigation={this.props.navigation} lista={this.state.restaurantes} />
                     </View>
 
-                    <View>
+                    <View style={{marginBottom: 20}}>
                         <CabecalhoSecao titulo="Perto de você" />
                         <CorpoSecao navigation={this.props.navigation} lista={this.state.restaurantes} />
                     </View>
 
-                </ScrollView> */}
-                <TelaListarRestaurante resultado={this.state.restaurantes} />
+                    <View style={{marginBottom: 20}}>
+                        <CabecalhoSecao titulo="Os cinco melhores" />
+                        <TelaListarRestaurante resultado={this.state.restaurantes.sort((a, b) => {
+                            if (a.nota > b.nota) return -1;
+                            if (b.nota > a.nota) return 1;
+                            return 0;
+                        }
+                        ).slice(0, 4)}
+                        />
+                    </View>
+                </ScrollView>
             </View>
         )
     }
