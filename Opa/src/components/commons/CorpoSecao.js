@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, ScrollView, FlatList, TouchableOpacity } from 'react-native';
+import { View, Text, Image, FlatList, TouchableOpacity } from 'react-native';
 import { NavigationActions } from 'react-navigation';
 
 import estilo from '../../styles/style';
@@ -17,10 +17,10 @@ class CorpoSecao extends Component {
         // os valores recebidos devem ser ajustados futuramente para mostrar mais dados em cada card
         return (
             <TouchableOpacity style={estilo.restauranteCard} onPress={() => console.log(id)}>
-                <Text style={estilo.restauranteNota}>{nota}</Text>
                 <View style={estilo.restauranteImg}>
-                    <Text>LOGO</Text>
+                    <Image resizeMode='stretch' source={require('../../images/img.jpeg')}/>
                 </View>
+                <Text style={estilo.restauranteNota}>{nota}</Text>
                 <Text style={estilo.restauranteNome}>{nome}</Text>
 
             </TouchableOpacity>

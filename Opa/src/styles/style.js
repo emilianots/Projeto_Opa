@@ -10,12 +10,12 @@ const estilo = StyleSheet.create({
 
     cabecalho: {
         width: '105%',
-        marginBottom: 15,
+        marginBottom: 10,
         paddingHorizontal: 20,
         backgroundColor: corPrimaria,
         alignItems: 'center',
-        borderBottomLeftRadius: 30,
-        borderBottomRightRadius: 30
+        borderBottomLeftRadius: 40,
+        borderBottomRightRadius: 40
     },
 
     cabecalhoTexto: {
@@ -25,18 +25,20 @@ const estilo = StyleSheet.create({
     imputPrimario: {
         width: '85%',
         marginVertical: 10,
-        backgroundColor: 'white',
+        paddingVertical: 5,
         paddingHorizontal: 20,
-        paddingVertical: 3,
+        backgroundColor: 'white',
         borderRadius: 100,
         fontSize: 16
     },
+
+    // boatao primario -----
     botaoPrimario: {
-        width: '100%',
         padding: 10,
         borderRadius: 100,
-        backgroundColor: 'blue',
+        backgroundColor: 'salmon',
         borderColor: corPrimaria,
+        alignItems: 'center'
     },
     botaoPrimarioTexto: {
         fontWeight: 'bold',
@@ -44,6 +46,12 @@ const estilo = StyleSheet.create({
     },
 
 
+    //botao categoria
+
+    botaoCategoria: {
+        padding: 10,
+        fontSize: 12,
+    },
     // abaixo os estilos do cabeçalho das seções na home
     secaoCabecalho: {
         flexDirection: 'row',
@@ -67,20 +75,21 @@ const estilo = StyleSheet.create({
     },
 
 
+
     //estilos dos cards das seções da home
 
-    restauranteCard:{
+    restauranteCard: {
         width: 140,
         height: 140,
         margin: 9,
         marginBottom: 15,
         position: 'relative',
-        alignItems: 'center',
         borderRadius: 8,
         backgroundColor: 'gray',
-        justifyContent: 'center'
+        alignItems: 'center'
+    
     },
-    restauranteNota:{
+    restauranteNota: {
         minWidth: 30,
         position: 'absolute',
         top: 10,
@@ -90,7 +99,14 @@ const estilo = StyleSheet.create({
         borderRadius: 20,
     },
 
-    restauranteNome:{
+    restauranteImg: {
+        width: 140,
+        height: 140,
+        overflow: 'hidden',
+        borderRadius: 20
+        },
+
+    restauranteNome: {
         width: '80%',
         bottom: -5,
         backgroundColor: 'white',

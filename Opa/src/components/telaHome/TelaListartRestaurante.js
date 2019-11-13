@@ -28,7 +28,7 @@ export default class TelaListarRestaurante extends Component {
 
     render() {
         return (
-            <View style={{ flex: 1, width: '97%', paddingHorizontal: 15, marginBottom: 20 }}>
+            <View style={{ flex: 1, width: '97%', paddingHorizontal: 15 }}>
                 <FlatList
                     data={this.props.resultado}
                     showsVerticalScrollIndicator={false}

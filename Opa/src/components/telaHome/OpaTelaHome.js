@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, ScrollView } from 'react-native';
+import { View, Text, ScrollView, AsyncStorage } from 'react-native';
 import { Cabecalho, SecaoHome, OpaSpinner, CabecalhoSecao, CorpoSecao } from '../commons/index';
 import TelaListarRestaurante from './TelaListartRestaurante'
 
@@ -20,6 +20,7 @@ class OpaTelaHome extends Component {
     }
 
     static navigationOptions = {
+        header: null, // setar o header do navegation como nulo
         title: "Bem Vindo ao Opa!",
         headerStyle: {
             backgroundColor: '#ff5c5c',
@@ -42,9 +43,16 @@ class OpaTelaHome extends Component {
         this.setState({ restaurantes, loading: false }) // atualiza o estado do componente
     }
 
-    componentDidMount() {
+    async componentDidMount() {
         this.unscribe = this.ref.onSnapshot(this.atualizarLista.bind(this)); //o unscribe fica escutando qualquer mudança na coleção 'restaurantes'
+        try{
+            const valor =  await AsyncStorage.getItem('item');
+            console.log(valor + ' eeeeeee');
+        } catch(e){
+            console.log(e);
+        }
     }
+
 
     render() {
         if (this.state.loading) { // verifica se a lista não foi carregada

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native'
+import { View, Text, AsyncStorage } from 'react-native'
 import TabNavigator from './Routes'
 
 import * as firebase from 'firebase';
@@ -17,7 +17,16 @@ export default class App extends Component {
 
   }
 
+  async storeData() {
+    try {
+      await AsyncStorage.setItem('item', 'valor');
+    } catch (e) {
+      console.log(e);
+    }
+  }
+
   render() {
+    this.storeData();
     return (
       //navegação principal
       //abaixo mostra as tabs de cada tela principal do app - home, cardápio, comanda, etc.
