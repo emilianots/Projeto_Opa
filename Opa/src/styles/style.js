@@ -1,6 +1,8 @@
 import { StyleSheet } from 'react-native'
 
-const corPrimaria = '#ff5c5c'
+const corPrimaria = '#ff5c5c';
+const fontePrimaria = 'Montserrat-Medium';
+const fonteSecundaria = 'Gotham Light';
 
 const estilo = StyleSheet.create({
     app: {
@@ -11,6 +13,7 @@ const estilo = StyleSheet.create({
     cabecalho: {
         width: '105%',
         marginBottom: 10,
+        paddingVertical: 10,
         paddingHorizontal: 20,
         backgroundColor: corPrimaria,
         alignItems: 'center',
@@ -18,13 +21,30 @@ const estilo = StyleSheet.create({
         borderBottomRightRadius: 40
     },
 
-    cabecalhoTexto: {
-        marginHorizontal: 5,
-    },
-
-    imputPrimario: {
+    categoriaTrack:{
         width: '85%',
         marginVertical: 10,
+    },
+
+    categoriaCard:{
+        width: 130,
+        height: 130,
+        marginHorizontal: 5,
+        backgroundColor: 'white',
+        borderRadius: 7,
+        overflow: 'hidden',
+        justifyContent: 'center'
+    },
+
+    categoriaImg:{
+        width: 130,
+        height: 130,
+        padding: 5,
+    },
+    
+    imputPrimario: {
+        width: '85%',
+        marginVertical: 5,
         paddingVertical: 5,
         paddingHorizontal: 20,
         backgroundColor: 'white',
@@ -42,15 +62,24 @@ const estilo = StyleSheet.create({
     },
     botaoPrimarioTexto: {
         fontWeight: 'bold',
-        color: 'white'
+        color: 'white',
+        fontFamily: fontePrimaria
     },
 
 
     //botao categoria
-
     botaoCategoria: {
-        padding: 10,
-        fontSize: 12,
+        paddingHorizontal: 15,
+        paddingVertical: 3,
+        backgroundColor: 'white',
+        borderRadius: 20,
+        fontFamily: 'Montserrat-Light'
+    },
+
+    botaoCategoriaTexto:{
+        fontSize: 14,
+        color: corPrimaria,
+        fontFamily: fontePrimaria
     },
     // abaixo os estilos do cabeçalho das seções na home
     secaoCabecalho: {
@@ -59,21 +88,21 @@ const estilo = StyleSheet.create({
         alignItems: 'center'
     },
     secaoEtiqueta: {
-        minWidth: '35%',
         marginRight: 40,
-        alignItems: 'flex-end',
+        paddingVertical: 5,
+        paddingHorizontal: 20,
         borderTopRightRadius: 100,
         borderBottomRightRadius: 100,
-        paddingVertical: 5,
-        paddingRight: 15,
         backgroundColor: corPrimaria,
+        color: 'white',
+        fontFamily: fontePrimaria,
+
         shadowColor: '#000',
-        shadowOffset: { width: 0, height: 2 },
+        shadowOffset: { width: 10, height: 10 },
         shadowOpacity: 0.8,
-        shadowRadius: 1,
+        shadowRadius: 3,
         elevation: 4,
     },
-
 
 
     //estilos dos cards das seções da home
@@ -115,6 +144,8 @@ const estilo = StyleSheet.create({
         borderRadius: 10,
         position: 'absolute',
         textAlign: 'center',
+        fontFamily: fontePrimaria,
+
         shadowColor: '#000',
         shadowOffset: { width: 0, height: 2 },
         shadowOpacity: 0.8,

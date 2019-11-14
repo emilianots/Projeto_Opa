@@ -28,7 +28,8 @@ const TabNavigator = createBottomTabNavigator({
     Home: {
         screen: StackHome,
         navigationOptions: {
-            tabBarLabel: 'Home'
+            tabBarLabel: 'Home',
+
         }
     },
     // Mapa: {
@@ -62,8 +63,8 @@ const TabNavigator = createBottomTabNavigator({
             inactiveTintColor: 'gray',
             labelStyle: {
                 paddingBottom: 10,
-                fontWeight: "bold",
-                fontSize: 16
+                fontSize: 16,
+                fontFamily: 'Montserrat-Medium'
             },
         },
     }

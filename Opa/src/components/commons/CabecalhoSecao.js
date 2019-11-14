@@ -14,14 +14,9 @@ class CabecalhoSecao extends Component {
         return (
             //abaixo é renderizado a etiqueta mais a linha que fica do lado dela
             <View style={estilo.secaoCabecalho}>
-                <View style={estilo.secaoEtiqueta} >
-                    <Text style={{ color: 'white', fontSize: 16 }} >{this.props.titulo}</Text>
-                </View>
-
+                <Text style={estilo.secaoEtiqueta}>{this.props.titulo}</Text>
                 <View style={{ width: '60%', height: 2, backgroundColor: 'red', }} >
-
                 </View>
-
             </View>
         )
     }
