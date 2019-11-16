@@ -13,10 +13,15 @@ import {
     OpaTelaPerfil
 } from './components/index';
 
+import {TelaListarRestaurante} from './components/telaHome/TelaListartRestaurante'
+
 
 const StackHome = createStackNavigator({
     HomeScreen: {
         screen: OpaTelaHome,
+    },
+    ListarRestaurantes:{
+        screen: TelaListarRestaurante
     }
 },
     {

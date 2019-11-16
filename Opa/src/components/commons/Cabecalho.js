@@ -10,7 +10,7 @@ class Cabecalho extends Component {
         this.state = {
             isShown: false,
             altura: new Animated.Value(0),
-            categorias: ['Pitzza', 'Pitzza', 'Pitzza', 'Pitzza', 'Pitzza', 'Pitzza', 'Pitzza', 'Pitzza', 'Pitzza']
+            categorias: ['Pítça', 'Amburgui', 'Çalgado', 'Assaí', 'Zalada', 'Sanduicheicheihce', 'Pitzza', 'Comida de baiano', 'Comida']
         }
     }
 
@@ -22,7 +22,7 @@ class Cabecalho extends Component {
                 data={this.state.categorias}
                 alignItems='center'
                 renderItem={({ item }) =>
-                    <TouchableOpacity onPress={()=> this.props.navigation.navigate('')} style={estilo.categoriaCard}>
+                    <TouchableOpacity onPress={()=> this.props.navigation.navigate('ListarRestaurantes', {categoria: item})} style={estilo.categoriaCard}>
                         <Image resizeMethod='scale' style={estilo.categoriaImg} source={require('../../../assets/images/pizza.jpeg')}/>
                     </TouchableOpacity>
                 }

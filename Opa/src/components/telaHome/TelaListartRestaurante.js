@@ -2,8 +2,34 @@ import React, { Component } from 'react';
 import { View, Text, FlatList, TouchableOpacity } from 'react-native';
 import { Badge } from 'react-native-elements';
 
-export default class TelaListarRestaurante extends Component {
+import * as firebase from 'firebase';
+import 'firebase/firestore';
 
+class TelaListarRestaurante extends Component {
+
+    constructor(props) {
+        super(props);
+        this.unscribe = null;
+        this.ref = firebase.firestore().collection('produtos');
+        const categoria = this.props.navigation.getParam('categoria', null)
+        this.state = {
+            categoria: "",
+            produtos: [],
+            carregando: true
+        };
+
+    }
+
+    componentDidMount() {
+        this.setState({
+            categoria: this.props.navigation.getParam('categoria', null)
+        })
+        console.log(this.state.categoria);
+    }
+
+    static navigationOptions = {
+        //title: 'Mostrando resultados para ' + this.state.categoria
+    }
 
     renderItemList(nome, key, nota, imgULR) {
         return (
@@ -41,4 +67,4 @@ export default class TelaListarRestaurante extends Component {
     }
 }
 
-//export { TelaListarRestaurante };
+export { TelaListarRestaurante };

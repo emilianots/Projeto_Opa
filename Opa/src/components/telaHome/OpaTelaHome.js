@@ -45,10 +45,10 @@ class OpaTelaHome extends Component {
 
     async componentDidMount() {
         this.unscribe = this.ref.onSnapshot(this.atualizarLista.bind(this)); //o unscribe fica escutando qualquer mudança na coleção 'restaurantes'
-        try{
-            const valor =  await AsyncStorage.getItem('item');
+        try {
+            const valor = await AsyncStorage.getItem('item');
             console.log(valor + ' eeeeeee');
-        } catch(e){
+        } catch (e) {
             console.log(e);
         }
     }
@@ -65,27 +65,27 @@ class OpaTelaHome extends Component {
         // e chama tbm o componente responsavel por renderizar a seção de restarantes específicas
         return (
             <View style={{ flex: 1, alignItems: 'center', backgroundColor: '#eee' }}>
-                <Cabecalho />
+                <Cabecalho navigation={this.props.navigation} />
                 <ScrollView>
                     {/* 
                         Abaixo foi passada a propriedade navigation para poder ser realizada a navegação pelos componentes filhos
                     */}
-                    <View style={{marginBottom: 20}}>
+                    <View style={{ marginBottom: 20 }}>
                         <CabecalhoSecao titulo="Destaques" />
                         <CorpoSecao navigation={this.props.navigation} lista={this.state.restaurantes} />
                     </View>
 
-                    <View style={{marginBottom: 20}}>
+                    <View style={{ marginBottom: 20 }}>
                         <CabecalhoSecao titulo="Recomendados" />
                         <CorpoSecao navigation={this.props.navigation} lista={this.state.restaurantes} />
                     </View>
 
-                    <View style={{marginBottom: 20}}>
+                    <View style={{ marginBottom: 20 }}>
                         <CabecalhoSecao titulo="Perto de você" />
                         <CorpoSecao navigation={this.props.navigation} lista={this.state.restaurantes} />
                     </View>
 
-                    <View style={{marginBottom: 20}}>
+                    {/* <View style={{marginBottom: 20}}>
                         <CabecalhoSecao titulo="Os cinco melhores" />
                         <TelaListarRestaurante resultado={this.state.restaurantes.sort((a, b) => {
                             if (a.nota > b.nota) return -1;
@@ -94,7 +94,7 @@ class OpaTelaHome extends Component {
                         }
                         ).slice(0, 4)}
                         />
-                    </View>
+                    </View> */}
                 </ScrollView>
             </View>
         )
