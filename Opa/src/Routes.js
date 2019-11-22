@@ -1,9 +1,18 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { Platform } from "react-native";
+import { Text, View, Image } from 'react-native';
 import { createAppContainer, } from 'react-navigation';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 import { createStackNavigator } from 'react-navigation-stack'
+
+//icons
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import Istoicons from 'react-native-vector-icons/Fontisto';
+import Awesomeicons from 'react-native-vector-icons/FontAwesome';
+import Materialicons from 'react-native-vector-icons/MaterialCommunityIcons'
+
+
+
 import {
     //Telas principais do app
     OpaTelaHome,
@@ -34,7 +43,9 @@ const TabNavigator = createBottomTabNavigator({
         screen: StackHome,
         navigationOptions: {
             tabBarLabel: 'Home',
-
+            tabBarIcon: ({ tintColor }) => (
+                <Ionicons name='md-home' size={25} color="gray" />
+              )
         }
     },
     // Mapa: {
@@ -46,19 +57,40 @@ const TabNavigator = createBottomTabNavigator({
     Cardapio: {
         screen: OpaTelaCardapio,
         navigationOptions: {
-            tabBarLabel: 'Cardápio'
+            tabBarLabel: 'Cardápio',
+            tabBarIcon: ({ tintColor }) => (
+                <Ionicons name='md-list' size={25} color="gray" />
+              )
         }
     },
+
+    BotaoDoido: {
+        screen: OpaTelaComanda,
+        navigationOptions: {
+            tabBarLabel: ' ',
+            
+            tabBarIcon: ({ tintColor }) =>
+                <View style={{backgroundColor: '#ff5c5c', width: 60, height: 60, borderRadius: 100, alignItems: 'center', justifyContent: 'center'}}><Materialicons name='qrcode-scan' size={35} color="white" /></View>
+                  
+        }
+    },
+
     Comanda: {
         screen: OpaTelaComanda,
         navigationOptions: {
-            tabBarLabel: 'Comanda'
+            tabBarLabel: 'Comanda',
+            tabBarIcon: ({ tintColor }) => (
+                <Istoicons name='file-1' size={25} color="gray" />
+              )
         }
     },
     Perfil: {
         screen: OpaTelaPerfil,
         navigationOptions: {
-            tabBarLabel: 'Perfil'
+            tabBarLabel: 'Perfil',
+            tabBarIcon: ({ tintColor }) => (
+                <Awesomeicons name='user-o' size={25} color="gray" />
+              )
         }
     }
 },
@@ -66,9 +98,12 @@ const TabNavigator = createBottomTabNavigator({
         tabBarOptions: {
             activeTintColor: 'black',
             inactiveTintColor: 'gray',
+            iconStyle:{
+                paddingTop: 10,
+            },
             labelStyle: {
-                paddingBottom: 10,
-                fontSize: 16,
+                paddingBottom: 2,
+                fontSize: 12,
                 fontFamily: 'Montserrat-Medium'
             },
         },
