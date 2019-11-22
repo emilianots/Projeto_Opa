@@ -44,7 +44,7 @@ const TabNavigator = createBottomTabNavigator({
         navigationOptions: {
             tabBarLabel: 'Home',
             tabBarIcon: ({ tintColor }) => (
-                <Ionicons name='md-home' size={25} color="gray" />
+                <Ionicons name='md-home' size={22} color="gray" />
               )
         }
     },
@@ -57,9 +57,9 @@ const TabNavigator = createBottomTabNavigator({
     Cardapio: {
         screen: OpaTelaCardapio,
         navigationOptions: {
-            tabBarLabel: 'Cardápio',
+            tabBarLabel: 'Reserva',
             tabBarIcon: ({ tintColor }) => (
-                <Ionicons name='md-list' size={25} color="gray" />
+                <Ionicons name='md-list' size={22} color="gray" />
               )
         }
     },
@@ -70,7 +70,8 @@ const TabNavigator = createBottomTabNavigator({
             tabBarLabel: ' ',
             
             tabBarIcon: ({ tintColor }) =>
-                <View style={{backgroundColor: '#ff5c5c', width: 60, height: 60, borderRadius: 100, alignItems: 'center', justifyContent: 'center'}}><Materialicons name='qrcode-scan' size={35} color="white" /></View>
+                <View style={{backgroundColor: '#ff5c5c', width: 60, height: 60, borderRadius: 100, alignItems: 'center',
+                justifyContent: 'center', marginBottom: 20}}><Materialicons name='qrcode-scan' size={35} color="white" /></View>
                   
         }
     },
@@ -80,7 +81,7 @@ const TabNavigator = createBottomTabNavigator({
         navigationOptions: {
             tabBarLabel: 'Comanda',
             tabBarIcon: ({ tintColor }) => (
-                <Istoicons name='file-1' size={25} color="gray" />
+                <Istoicons name='file-1' size={22} color="gray" />
               )
         }
     },
@@ -89,7 +90,7 @@ const TabNavigator = createBottomTabNavigator({
         navigationOptions: {
             tabBarLabel: 'Perfil',
             tabBarIcon: ({ tintColor }) => (
-                <Awesomeicons name='user-o' size={25} color="gray" />
+                <Awesomeicons name='user-o' size={22} color="gray" />
               )
         }
     }
@@ -101,9 +102,13 @@ const TabNavigator = createBottomTabNavigator({
             iconStyle:{
                 paddingTop: 10,
             },
+
+            tabStyle:{
+                paddingTop: 10,
+            },
+
             labelStyle: {
-                paddingBottom: 2,
-                fontSize: 12,
+                fontSize: 11,
                 fontFamily: 'Montserrat-Medium'
             },
         },
