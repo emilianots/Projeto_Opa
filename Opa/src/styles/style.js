@@ -129,8 +129,8 @@ const estilo = StyleSheet.create({
     },
 
     restauranteImg: {
-        width: 140,
-        height: 140,
+        width: '100%',
+        height: '100%',
         overflow: 'hidden',
         borderRadius: 20
         },

@@ -17,8 +17,8 @@ class CorpoSecao extends Component {
         // os valores recebidos devem ser ajustados futuramente para mostrar mais dados em cada card
         return (
             <TouchableOpacity style={estilo.restauranteCard} onPress={() => console.log(id)}>
-                <View style={estilo.restauranteImg}>
-                    <Image resizeMode='stretch' source={require('../../../assets/images/img.jpeg')}/>
+                <View style={estilo.restauranteImg} >
+                    <Image style={{width: '100%', height: '100%'}} resizeMode='stretch' source={require('../../../assets/images/img.jpeg')}/>
                 </View>
                 <Text style={estilo.restauranteNota}>{nota}</Text>
                 <Text style={estilo.restauranteNome}>{nome}</Text>

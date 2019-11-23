@@ -84,17 +84,6 @@ class OpaTelaHome extends Component {
                         <CabecalhoSecao titulo="Perto de você" />
                         <CorpoSecao navigation={this.props.navigation} lista={this.state.restaurantes} />
                     </View>
-
-                    {/* <View style={{marginBottom: 20}}>
-                        <CabecalhoSecao titulo="Os cinco melhores" />
-                        <TelaListarRestaurante resultado={this.state.restaurantes.sort((a, b) => {
-                            if (a.nota > b.nota) return -1;
-                            if (b.nota > a.nota) return 1;
-                            return 0;
-                        }
-                        ).slice(0, 4)}
-                        />
-                    </View> */}
                 </ScrollView>
             </View>
         )
