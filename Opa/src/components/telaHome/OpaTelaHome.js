@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { View, Text, ScrollView, AsyncStorage } from 'react-native';
 import { Cabecalho, SecaoHome, OpaSpinner, CabecalhoSecao, CorpoSecao } from '../commons/index';
-import TelaListarRestaurante from './TelaListartRestaurante'
+import TelaListarRestaurante from './TelaListartRestaurante';
+import {QRCodeScanner} from 'react-native-qrcode-scanner';
 
 import * as firebase from 'firebase';
 import 'firebase/firestore';
@@ -47,7 +48,6 @@ class OpaTelaHome extends Component {
         this.unscribe = this.ref.onSnapshot(this.atualizarLista.bind(this)); //o unscribe fica escutando qualquer mudança na coleção 'restaurantes'
         try {
             const valor = await AsyncStorage.getItem('item');
-            console.log(valor + ' eeeeeee');
         } catch (e) {
             console.log(e);
         }
