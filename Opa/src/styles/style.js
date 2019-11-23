@@ -11,13 +11,26 @@ const estilo = StyleSheet.create({
     },
     
     textTitulo: {
-        fontSize: 20,
+        fontSize: 24,
         alignItems: 'center',
+        paddingTop: 20,
         color: 'white'
     },
 
     cabecalho: {
         width: '100%',
+        marginBottom: 10,
+        paddingVertical: 10,
+        paddingHorizontal: 20,
+        backgroundColor: corPrimaria,
+        alignItems: 'center',
+        borderBottomLeftRadius: 20,
+        borderBottomRightRadius: 20
+    },
+
+    cabecalho2: {
+        width: '100%',
+        height: '32%',
         marginBottom: 10,
         paddingVertical: 10,
         paddingHorizontal: 20,

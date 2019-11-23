@@ -19,8 +19,8 @@ class OpaTelaComanda extends Component{
 
     render(){
         return(
-            <View style={{flex: 1, backgroundColor: "#eee", overflow: "hidden"}}>
-                <View style={estilo.cabecalho}>
+            <View style={{flex: 1, backgroundColor: "#f6f6f6", overflow: "hidden"}}>
+                <View style={estilo.cabecalho2}>
                     <Text style={estilo.textTitulo}>Meus Pedidos</Text>
                 </View>
             </View>

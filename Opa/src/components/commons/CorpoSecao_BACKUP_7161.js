@@ -19,7 +19,7 @@ class CorpoSecao extends Component {
             <TouchableOpacity style={estilo.restauranteCard} onPress={() => console.log(id)}>
 <<<<<<< HEAD
                 <View style={estilo.restauranteImg} >
-                    <Image style={{width: '100%', height: '100%'}} resizeMode='stretch' source={require('../../../assets/images/img.jpeg')}/>
+                    <Image style={{width: '100%', height: '100%'}}resizeMode='stretch' source={require('../../../assets/images/img.jpeg')}/>
 =======
                 <View style={estilo.restauranteImg}>
                     <Image style={{width: '100%', height: '100%'}}resizeMode='stretch' source={require('../../../assets/images/img.jpeg')}/>

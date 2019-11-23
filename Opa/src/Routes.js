@@ -6,11 +6,9 @@ import { createBottomTabNavigator } from 'react-navigation-tabs';
 import { createStackNavigator } from 'react-navigation-stack'
 
 //icons
-import Ionicons from 'react-native-vector-icons/Ionicons';
-import Istoicons from 'react-native-vector-icons/Fontisto';
-import Awesomeicons from 'react-native-vector-icons/FontAwesome';
-import Materialicons from 'react-native-vector-icons/MaterialCommunityIcons'
-
+import {createIconSetFromFontello} from 'react-native-vector-icons'; 
+import fontelloConfig from './config.json'; 
+OpaIcons = createIconSetFromFontello (fontelloConfig); 
 
 
 import {
@@ -44,23 +42,18 @@ const TabNavigator = createBottomTabNavigator({
         screen: StackHome,
         navigationOptions: {
             tabBarLabel: 'Home',
-            tabBarIcon: ({ tintColor }) => (
-                <Ionicons name='md-home' size={22} color="gray" />
+            tabBarIcon: ({ focused, tintColor }) => (
+                <OpaIcons name='home' size={22} focused={focused} color={tintColor}/>
               )
         }
     },
-    // Mapa: {
-    //     screen: OpaTelaMapa,
-    //     navigationOptions: {
-    //         tabBarLabel: 'Mapa'
-    //     }
-    // },
+
     Reserva: {
         screen: OpaTelaReserva,
         navigationOptions: {
             tabBarLabel: 'Reserva',
             tabBarIcon: ({ tintColor }) => (
-                <Ionicons name='md-list' size={22} color="gray" />
+                <OpaIcons name='reserva' size={22} color={tintColor} />
               )
         }
     },
@@ -70,10 +63,10 @@ const TabNavigator = createBottomTabNavigator({
         navigationOptions: {
             tabBarLabel: ' ',
             
-            tabBarIcon: ({ tintColor }) =>
+            tabBarIcon: (
                 <View style={{backgroundColor: '#ff5c5c', width: 60, height: 60, borderRadius: 100, alignItems: 'center',
-                justifyContent: 'center', position: "absolute", top: -30}}><Materialicons name='qrcode-scan' size={35} color="white" /></View>
-                  
+                justifyContent: 'center', position: "absolute", top: -30}}><OpaIcons name='qrcode' size={35} color="white" /></View>
+            )
         }
     },
 
@@ -82,7 +75,7 @@ const TabNavigator = createBottomTabNavigator({
         navigationOptions: {
             tabBarLabel: 'Comanda',
             tabBarIcon: ({ tintColor }) => (
-                <Istoicons name='file-1' size={22} color="gray" />
+                <OpaIcons name='comanda' size={22} color={tintColor}/>
               )
         }
     },
@@ -91,7 +84,7 @@ const TabNavigator = createBottomTabNavigator({
         navigationOptions: {
             tabBarLabel: 'Perfil',
             tabBarIcon: ({ tintColor }) => (
-                <Awesomeicons name='user-o' size={22} color="gray" />
+                <OpaIcons name='perfil' size={22} color={tintColor}/>
               )
         }
     }
@@ -101,7 +94,7 @@ const TabNavigator = createBottomTabNavigator({
             activeTintColor: 'black',
             inactiveTintColor: 'gray',
             iconStyle:{
-                paddingTop: 10,
+                paddingTop: 10
             },
 
             tabStyle:{
