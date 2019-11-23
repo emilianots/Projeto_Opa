@@ -14,7 +14,7 @@ const estilo = StyleSheet.create({
         fontSize: 24,
         alignItems: 'center',
         paddingTop: 20,
-        color: 'white'
+        color: '#fff'
     },
 
     cabecalho: {
@@ -37,7 +37,8 @@ const estilo = StyleSheet.create({
         backgroundColor: corPrimaria,
         alignItems: 'center',
         borderBottomLeftRadius: 20,
-        borderBottomRightRadius: 20
+        borderBottomRightRadius: 20,
+        
     },
 
     categoriaTrack:{

@@ -10,6 +10,7 @@ class OpaTelaComanda extends Component{
     constructor(props) {
         super(props);
         this.state = {
+            valor: 2,
             emAndamento: [],
             recebidos: [],
             carregando: true
@@ -22,6 +23,7 @@ class OpaTelaComanda extends Component{
             <View style={{flex: 1, backgroundColor: "#f6f6f6", overflow: "hidden"}}>
                 <View style={estilo.cabecalho2}>
                     <Text style={estilo.textTitulo}>Meus Pedidos</Text>
+                    <Text>{this.state.valor}</Text> 
                 </View>
             </View>
 

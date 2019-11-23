@@ -42,8 +42,9 @@ const TabNavigator = createBottomTabNavigator({
         screen: StackHome,
         navigationOptions: {
             tabBarLabel: 'Home',
-            tabBarIcon: ({ focused, tintColor }) => (
-                <OpaIcons name='home' size={22} focused={focused} color={tintColor}/>
+            tabBarIcon: ({ tintColor, focused }) => (
+                <OpaIcons name={focused ? 'a' : 'home'} size={22} color={tintColor}/>
+
               )
         }
     },
@@ -52,8 +53,9 @@ const TabNavigator = createBottomTabNavigator({
         screen: OpaTelaReserva,
         navigationOptions: {
             tabBarLabel: 'Reserva',
-            tabBarIcon: ({ tintColor }) => (
-                <OpaIcons name='reserva' size={22} color={tintColor} />
+            tabBarIcon: ({ tintColor, focused }) => (
+                <OpaIcons name={focused ? 'a' : 'reserva'} size={22} color={tintColor}/>
+
               )
         }
     },
@@ -65,7 +67,7 @@ const TabNavigator = createBottomTabNavigator({
             
             tabBarIcon: (
                 <View style={{backgroundColor: '#ff5c5c', width: 60, height: 60, borderRadius: 100, alignItems: 'center',
-                justifyContent: 'center', position: "absolute", top: -30}}><OpaIcons name='qrcode' size={35} color="white" /></View>
+                justifyContent: 'center', position: "absolute", top: -20}}><OpaIcons name='qrcode' size={35} color="white" /></View>
             )
         }
     },
@@ -74,8 +76,9 @@ const TabNavigator = createBottomTabNavigator({
         screen: OpaTelaComanda,
         navigationOptions: {
             tabBarLabel: 'Comanda',
-            tabBarIcon: ({ tintColor }) => (
-                <OpaIcons name='comanda' size={22} color={tintColor}/>
+            tabBarIcon: ({ tintColor, focused }) => (
+                <OpaIcons name={focused ? 'a' : 'comanda'} size={22} color={tintColor}/>
+
               )
         }
     },
@@ -83,25 +86,26 @@ const TabNavigator = createBottomTabNavigator({
         screen: OpaTelaPerfil,
         navigationOptions: {
             tabBarLabel: 'Perfil',
-            tabBarIcon: ({ tintColor }) => (
-                <OpaIcons name='perfil' size={22} color={tintColor}/>
+            tabBarIcon: ({ tintColor, focused }) => (
+                <OpaIcons name={focused ? 'a' : 'perfil'} size={22} color={tintColor}/>
               )
         }
-    }
+    },
 },
     {
         tabBarOptions: {
-            activeTintColor: 'black',
+            activeTintColor: '#ff5c5c',
             inactiveTintColor: 'gray',
             iconStyle:{
                 paddingTop: 10
             },
 
             tabStyle:{
-                paddingTop: 10,
+                paddingTop: 5,
             },
 
             labelStyle: {
+                paddingBottom: 5,
                 fontSize: 11,
                 fontFamily: 'Montserrat-Medium'
             },
