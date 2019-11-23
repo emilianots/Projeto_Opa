@@ -28,7 +28,7 @@ class OpaTelaHome extends Component {
         headerLayoutPreset: 'center'
     }
 
-    atualizarLista(query) { // metodo enviado para atializar a lista de restaurantes cadastrados
+    atualizarLista(query) { // metodo enviado para atualizar a lista de restaurantes cadastrados
         let restaurantes = [];
 
         query.forEach((doc) => {
