@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 import { OpaBotao, Cabecalho } from '../commons/index';
-import Icon from 'react-native-vector-icons/Ionicons';
 
-class OpaTelaPerfil extends Component {
+class OpaTelaQrcode extends Component {
 
     render() {
         return (
-            <View>
-                <Text> TELA PERFIL</Text>
+            <View style={{flex: 1}}>
+                <Text> TELA QRCODE</Text>
             </View>
         )
     }
-}
+};
 
-export { OpaTelaPerfil };
+
+export { OpaTelaQrcode };

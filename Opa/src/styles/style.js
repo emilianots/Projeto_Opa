@@ -9,16 +9,22 @@ const estilo = StyleSheet.create({
         flex: 1,
         alignItems: 'center'
     },
+    
+    textTitulo: {
+        fontSize: 20,
+        alignItems: 'center',
+        color: 'white'
+    },
 
     cabecalho: {
-        width: '105%',
+        width: '100%',
         marginBottom: 10,
         paddingVertical: 10,
         paddingHorizontal: 20,
         backgroundColor: corPrimaria,
         alignItems: 'center',
-        borderBottomLeftRadius: 40,
-        borderBottomRightRadius: 40
+        borderBottomLeftRadius: 20,
+        borderBottomRightRadius: 20
     },
 
     categoriaTrack:{

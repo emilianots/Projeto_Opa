@@ -16,7 +16,8 @@ import Materialicons from 'react-native-vector-icons/MaterialCommunityIcons'
 import {
     //Telas principais do app
     OpaTelaHome,
-    OpaTelaMapa,
+    OpaTelaReserva,
+    OpaTelaQrcode,
     OpaTelaComanda,
     OpaTelaCardapio,
     OpaTelaPerfil
@@ -54,8 +55,8 @@ const TabNavigator = createBottomTabNavigator({
     //         tabBarLabel: 'Mapa'
     //     }
     // },
-    Cardapio: {
-        screen: OpaTelaCardapio,
+    Reserva: {
+        screen: OpaTelaReserva,
         navigationOptions: {
             tabBarLabel: 'Reserva',
             tabBarIcon: ({ tintColor }) => (
@@ -64,14 +65,14 @@ const TabNavigator = createBottomTabNavigator({
         }
     },
 
-    BotaoDoido: {
-        screen: OpaTelaComanda,
+    Qrcode: {
+        screen: OpaTelaQrcode,
         navigationOptions: {
             tabBarLabel: ' ',
             
             tabBarIcon: ({ tintColor }) =>
                 <View style={{backgroundColor: '#ff5c5c', width: 60, height: 60, borderRadius: 100, alignItems: 'center',
-                justifyContent: 'center', marginBottom: 20}}><Materialicons name='qrcode-scan' size={35} color="white" /></View>
+                justifyContent: 'center', position: "absolute", top: -30}}><Materialicons name='qrcode-scan' size={35} color="white" /></View>
                   
         }
     },
