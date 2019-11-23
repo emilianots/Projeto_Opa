@@ -21,13 +21,13 @@ class Cabecalho extends Component {
                 height={this.state.altura}
                 data={this.state.categorias}
                 alignItems='center'
-                renderItem={({ item }) =>
+                renderItem={({ item, index }) =>
                     <TouchableOpacity onPress={()=> this.props.navigation.navigate('ListarRestaurantes', {categoria: item})} style={estilo.categoriaCard}>
                         <Image resizeMethod='scale' style={estilo.categoriaImg} source={require('../../../assets/images/pizza.jpeg')}/>
                     </TouchableOpacity>
                 }
-                horizontal={true}
-                keyExtrator={(index, item) => index + item} />
+                horizontal={true} 
+                keyExtractor = {(index,item)=>index+item}/>
         )
 
     }
