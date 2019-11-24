@@ -12,8 +12,13 @@ const estilo = StyleSheet.create({
     
     textTitulo: {
         fontSize: 24,
-        alignItems: 'center',
+        paddingTop: 5,
+        color: '#fff'
+    },
+
+    textValor: {
         paddingTop: 20,
+        fontSize: 30,
         color: '#fff'
     },
 
@@ -30,7 +35,7 @@ const estilo = StyleSheet.create({
 
     cabecalho2: {
         width: '100%',
-        height: '32%',
+        height: '30%',
         marginBottom: 10,
         paddingVertical: 10,
         paddingHorizontal: 20,
@@ -74,15 +79,39 @@ const estilo = StyleSheet.create({
 
     // boatao primario -----
     botaoPrimario: {
+        overflow: 'hidden',
+        width: 130,
         padding: 10,
+        margin: 30,
         borderRadius: 100,
-        backgroundColor: 'salmon',
-        borderColor: corPrimaria,
-        alignItems: 'center'
+        borderWidth: 1,
+        borderColor: '#fff',
+        backgroundColor: '#fff',
+        alignItems: 'center',
     },
+
     botaoPrimarioTexto: {
+        fontSize: 16,
         fontWeight: 'bold',
-        color: 'white',
+        color: corPrimaria,
+        fontFamily: fontePrimaria,
+    },
+//botao secundario
+    botaoSecundario: {
+        overflow: 'hidden',
+        width: 130,
+        padding: 10,
+        margin: 30,
+        borderRadius: 100,
+        borderWidth: 1,
+        borderColor: '#fff',
+        alignItems: 'center',
+    },
+    
+    botaoSecundarioTexto: {
+        fontSize: 16,
+        fontWeight: 'bold',
+        color: '#fff',
         fontFamily: fontePrimaria
     },
 

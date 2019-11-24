@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, Button, TouchableOpacity} from 'react-native';
 import {OpaBotao, Cabecalho} from '../commons/index';
-import Icon from 'react-native-vector-icons/Ionicons';
 import estilo from "../../styles/style";
 
 
@@ -10,7 +9,7 @@ class OpaTelaComanda extends Component{
     constructor(props) {
         super(props);
         this.state = {
-            valor: 2,
+            valor: 0.00,
             emAndamento: [],
             recebidos: [],
             carregando: true
@@ -23,10 +22,20 @@ class OpaTelaComanda extends Component{
             <View style={{flex: 1, backgroundColor: "#f6f6f6", overflow: "hidden"}}>
                 <View style={estilo.cabecalho2}>
                     <Text style={estilo.textTitulo}>Meus Pedidos</Text>
-                    <Text>{this.state.valor}</Text> 
+                    <Text style={estilo.textValor}>R${this.state.valor}</Text>
+                    <View style={{flexDirection: 'row'}}>
+                        <TouchableOpacity
+                            style={estilo.botaoSecundario}>
+                            <Text style={estilo.botaoSecundarioTexto}>Detalhes</Text> 
+                        </TouchableOpacity>
+
+                        <TouchableOpacity
+                            style={estilo.botaoPrimario}>
+                            <Text style={estilo.botaoPrimarioTexto}>Pagar</Text> 
+                        </TouchableOpacity>
+                    </View>
                 </View>
             </View>
-
         )
     }
 }

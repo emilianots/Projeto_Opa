@@ -43,7 +43,7 @@ const TabNavigator = createBottomTabNavigator({
         navigationOptions: {
             tabBarLabel: 'Home',
             tabBarIcon: ({ tintColor, focused }) => (
-                <OpaIcons name={focused ? 'a' : 'home'} size={22} color={tintColor}/>
+                <OpaIcons name={focused ? 'home-a' : 'home'} size={22} color={tintColor}/>
 
               )
         }
@@ -54,7 +54,7 @@ const TabNavigator = createBottomTabNavigator({
         navigationOptions: {
             tabBarLabel: 'Reserva',
             tabBarIcon: ({ tintColor, focused }) => (
-                <OpaIcons name={focused ? 'a' : 'reserva'} size={22} color={tintColor}/>
+                <OpaIcons name={focused ? 'reservar-a' : 'reservar'} size={22} color={tintColor}/>
 
               )
         }
@@ -67,7 +67,7 @@ const TabNavigator = createBottomTabNavigator({
             
             tabBarIcon: (
                 <View style={{backgroundColor: '#ff5c5c', width: 60, height: 60, borderRadius: 100, alignItems: 'center',
-                justifyContent: 'center', position: "absolute", top: -20}}><OpaIcons name='qrcode' size={35} color="white" /></View>
+                justifyContent: 'center', position: "absolute", top: -20}}><OpaIcons name='qr-code' size={35} color="white" /></View>
             )
         }
     },
@@ -77,7 +77,7 @@ const TabNavigator = createBottomTabNavigator({
         navigationOptions: {
             tabBarLabel: 'Comanda',
             tabBarIcon: ({ tintColor, focused }) => (
-                <OpaIcons name={focused ? 'a' : 'comanda'} size={22} color={tintColor}/>
+                <OpaIcons name={focused ? 'comanda-a' : 'comanda'} size={22} color={tintColor}/>
 
               )
         }
@@ -87,7 +87,7 @@ const TabNavigator = createBottomTabNavigator({
         navigationOptions: {
             tabBarLabel: 'Perfil',
             tabBarIcon: ({ tintColor, focused }) => (
-                <OpaIcons name={focused ? 'a' : 'perfil'} size={22} color={tintColor}/>
+                <OpaIcons name={focused ? 'perfil-a' : 'perfil'} size={22} color={tintColor}/>
               )
         }
     },
