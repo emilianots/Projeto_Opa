@@ -67,7 +67,7 @@ const TabNavigator = createBottomTabNavigator({
             
             tabBarIcon: (
                 <View style={{backgroundColor: '#ff5c5c', width: 60, height: 60, borderRadius: 100, alignItems: 'center',
-                justifyContent: 'center', position: "absolute", top: -20}}><OpaIcons name='qr-code' size={35} color="white" /></View>
+                justifyContent: 'center', position: "absolute", top: -20, elevation: 2}}><OpaIcons name='qr-code' size={35} color="white" /></View>
             )
         }
     },
@@ -96,19 +96,17 @@ const TabNavigator = createBottomTabNavigator({
         tabBarOptions: {
             activeTintColor: '#ff5c5c',
             inactiveTintColor: 'gray',
-            iconStyle:{
-                paddingTop: 10
-            },
-
-            tabStyle:{
-                paddingTop: 5,
-            },
 
             labelStyle: {
                 paddingBottom: 5,
                 fontSize: 11,
                 fontFamily: 'Montserrat-Medium'
             },
+
+            style: {
+                paddingTop: 5,
+                backgroundColor: '#fff',
+            }
         },
     }
 );
