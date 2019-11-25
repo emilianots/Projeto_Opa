@@ -33,11 +33,12 @@ class OpaTelaHome extends Component {
         let restaurantes = [];
 
         query.forEach((doc) => {
-            const { nome, nota } = doc.data();
+            const { nome, nota, fotoURL } = doc.data();
             restaurantes.push({
                 key: doc.id,
                 nome,
-                nota
+                nota,
+                fotoURL,
             })
         });
 
