@@ -130,6 +130,25 @@ const estilo = StyleSheet.create({
         color: '#fff',
         fontFamily: fontePrimaria
     },
+//botao terceario
+    botaoTerceario: {
+        overflow: 'hidden',
+        width: 230,
+        padding: 12,
+        margin: 20,
+        borderRadius: 100,
+        borderWidth: 1,
+        borderColor: '#fff',
+        backgroundColor: corPrimaria,
+        alignItems: 'center',
+    },
+
+    botaoTercearioTexto: {
+        fontSize: 20,
+        fontWeight: 'bold',
+        color: '#fff',
+        fontFamily: fontePrimaria
+    },
 
 
     //botao categoria
@@ -178,7 +197,7 @@ const estilo = StyleSheet.create({
         margin: 9,
         marginBottom: 15,
         position: 'relative',
-        borderRadius: 8,
+        borderRadius: 10,
         backgroundColor: 'gray',
         alignItems: 'center'
     
@@ -197,7 +216,7 @@ const estilo = StyleSheet.create({
         width: '100%',
         height: '100%',
         overflow: 'hidden',
-        borderRadius: 20
+        borderRadius: 10
         },
 
     restauranteNome: {
