@@ -11,7 +11,7 @@ const estilo = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: corSecundaria,
     },
-    
+
     textTitulo: {
         fontSize: 24,
         paddingTop: 5,
@@ -46,7 +46,7 @@ const estilo = StyleSheet.create({
         alignItems: 'center',
         borderBottomLeftRadius: 20,
         borderBottomRightRadius: 20,
-        
+
     },
 
     cabecalho3: {
@@ -59,15 +59,15 @@ const estilo = StyleSheet.create({
         alignItems: 'center',
         borderBottomLeftRadius: 20,
         borderBottomRightRadius: 20,
-        
+
     },
 
-    categoriaTrack:{
+    categoriaTrack: {
         width: '85%',
         marginVertical: 10,
     },
 
-    categoriaCard:{
+    categoriaCard: {
         width: 130,
         height: 130,
         marginHorizontal: 5,
@@ -77,20 +77,26 @@ const estilo = StyleSheet.create({
         justifyContent: 'center'
     },
 
-    categoriaImg:{
+    categoriaImg: {
         width: 130,
         height: 130,
         padding: 5,
     },
-    
-    imputPrimario: {
-        width: '85%',
-        marginVertical: 5,
-        paddingVertical: 5,
+
+    containerPesquisa: {
+        width: '90%',
+        height: 45,
         paddingHorizontal: 20,
         backgroundColor: 'white',
         borderRadius: 100,
-        fontSize: 16
+        flexDirection: 'row',
+        alignItems: 'center',
+
+    },
+
+    imputPesquisa: {
+        width: '100%',
+        fontSize: 16,
     },
 
     // boatao primario -----
@@ -112,7 +118,7 @@ const estilo = StyleSheet.create({
         color: corPrimaria,
         fontFamily: fontePrimaria,
     },
-//botao secundario
+    //botao secundario
     botaoSecundario: {
         overflow: 'hidden',
         width: 130,
@@ -123,14 +129,14 @@ const estilo = StyleSheet.create({
         borderColor: '#fff',
         alignItems: 'center',
     },
-    
+
     botaoSecundarioTexto: {
         fontSize: 16,
         fontWeight: 'bold',
         color: '#fff',
         fontFamily: fontePrimaria
     },
-//botao terceario
+    //botao terceario
     botaoTerceario: {
         overflow: 'hidden',
         width: 230,
@@ -160,7 +166,7 @@ const estilo = StyleSheet.create({
         fontFamily: 'Montserrat-Light'
     },
 
-    botaoCategoriaTexto:{
+    botaoCategoriaTexto: {
         fontSize: 14,
         color: corPrimaria,
         fontFamily: fontePrimaria
@@ -200,7 +206,7 @@ const estilo = StyleSheet.create({
         borderRadius: 10,
         backgroundColor: 'gray',
         alignItems: 'center'
-    
+
     },
     restauranteNota: {
         minWidth: 30,
@@ -217,7 +223,7 @@ const estilo = StyleSheet.create({
         height: '100%',
         overflow: 'hidden',
         borderRadius: 10
-        },
+    },
 
     restauranteNome: {
         width: '80%',
@@ -256,7 +262,7 @@ const estilo = StyleSheet.create({
         marginBottom: 12,
         elevation: 1,
     },
-    textOptionsBlock:{
+    textOptionsBlock: {
         fontSize: 20,
         color: corPrimaria,
     },

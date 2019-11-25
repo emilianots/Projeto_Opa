@@ -21,10 +21,7 @@ class TelaListarRestaurante extends Component {
     }
 
     componentDidMount() {
-        this.setState({
-            categoria: this.props.navigation.getParam('categoria', null)
-        })
-        console.log(this.state.categoria);
+        console.log(this.props.navigation.getParam('categoria'));
     }
 
     static navigationOptions = {

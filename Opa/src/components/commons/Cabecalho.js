@@ -15,14 +15,14 @@ class Cabecalho extends Component {
         }
     }
 
-    toSearch(){
-        if(!this.state.searchBarFocused){
+    toSearch() {
+        if (!this.state.searchBarFocused) {
             alert('abriu')
-            this.setState({searchBarFocused: true});
+            this.setState({ searchBarFocused: true });
             return;
         }
 
-        this.setState({searchBarFocused: false});
+        this.setState({ searchBarFocused: false });
         alert('fechou');
 
         return
@@ -36,12 +36,12 @@ class Cabecalho extends Component {
                 data={this.state.categorias}
                 alignItems='center'
                 renderItem={({ item, index }) =>
-                    <TouchableOpacity onPress={()=> this.props.navigation.navigate('ListarRestaurantes', {categoria: item})} style={estilo.categoriaCard}>
-                        <Image resizeMethod='scale' style={estilo.categoriaImg} source={require('../../../assets/images/pizza.jpeg')}/>
+                    <TouchableOpacity onPress={() => this.props.navigation.navigate('ListarRestaurantes', { categoria: item })} style={estilo.categoriaCard}>
+                        <Image resizeMethod='scale' style={estilo.categoriaImg} source={require('../../../assets/images/pizza.jpeg')} />
                     </TouchableOpacity>
                 }
-                horizontal={true} 
-                keyExtractor = {(index,item)=>index+item}/>
+                horizontal={true}
+                keyExtractor={(index, item) => index + item} />
         )
 
     }
@@ -70,7 +70,11 @@ class Cabecalho extends Component {
     render() {
         return (
             <Animated.View style={estilo.cabecalho}>
-                <OpaInput placeholder="Pesquise seu restaurante favorito!" onFocus={()=> this.toSearch()} />
+                <OpaInput
+                    placeholder="Pesquise um restaurante ou comida!"
+                    onFocus={() => this.toSearch()}    // esse metodo muda o estado que interage com a animação da barra de pesquisa
+                    // a props 'onFocus' aciona de acordo com o 'focus' e 'blur'
+                />
                 {this.renderCategorias(this.state.categorias)}
                 <OpaBotao estilo="categoria" acao={() => this.showCategoria()}>
                     Categorias
