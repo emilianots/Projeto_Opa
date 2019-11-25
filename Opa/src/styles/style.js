@@ -1,13 +1,15 @@
 import { StyleSheet } from 'react-native'
 
 const corPrimaria = '#ff5c5c';
+const corSecundaria = '#f6f6f6';
 const fontePrimaria = 'Montserrat-Medium';
 const fonteSecundaria = 'Gotham Light';
 
 const estilo = StyleSheet.create({
     app: {
         flex: 1,
-        alignItems: 'center'
+        alignItems: 'center',
+        backgroundColor: corSecundaria,
     },
     
     textTitulo: {
@@ -34,9 +36,23 @@ const estilo = StyleSheet.create({
     },
 
     cabecalho2: {
+        overflow: "visible",
         width: '100%',
         height: '30%',
-        marginBottom: 10,
+        marginBottom: 5,
+        paddingVertical: 10,
+        paddingHorizontal: 20,
+        backgroundColor: corPrimaria,
+        alignItems: 'center',
+        borderBottomLeftRadius: 20,
+        borderBottomRightRadius: 20,
+        
+    },
+
+    cabecalho3: {
+        width: '100%',
+        height: '30%',
+        marginBottom: 5,
         paddingVertical: 10,
         paddingHorizontal: 20,
         backgroundColor: corPrimaria,
@@ -200,7 +216,44 @@ const estilo = StyleSheet.create({
         shadowOpacity: 0.8,
         shadowRadius: 1,
         elevation: 4,
+    },
+
+    //Estilos aba perfil
+    imgPerfil: {
+        marginTop: 20,
+        marginBottom: 5,
+        borderRadius: 100,
+        width: 100,
+        height: 100,
+    },
+
+    optionsBlock: {
+        padding: 20,
+        borderRadius: 20,
+        width: 330,
+        height: 68,
+        backgroundColor: '#fff',
+        flexDirection: 'row',
+        marginBottom: 12,
+        elevation: 1,
+    },
+    textOptionsBlock:{
+        fontSize: 20,
+        color: corPrimaria,
+    },
+
+    //geral
+    infoBlock: {
+        padding: 20,
+        borderRadius: 20,
+        width: 330,
+        height: 80,
+        backgroundColor: '#fff',
+        flexDirection: 'row',
+        marginBottom: 12,
+        elevation: 1,
     }
+
 })
 
 export default estilo
