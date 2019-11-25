@@ -12,19 +12,8 @@ class OpaTelaQrcode extends Component {
     render() {
         return (
             <QRCodeScanner
-                onRead={this.i}
-                topContent={
-                    <View>
-                        <Text>
-                            Escaneia aí mah!
-                        </Text>
-                    </View>
-                }
-                bottomContent={
-                    <View>
-                        <Text>Opa! e ai cara kkkkkk</Text>
-                    </View>
-                }
+                onRead={this.onSuccess}
+                
             />
         )
     }

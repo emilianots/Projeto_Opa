@@ -8,10 +8,24 @@ class Cabecalho extends Component {
     constructor() {
         super()
         this.state = {
-            isShown: false,
-            altura: new Animated.Value(0),
-            categorias: ['Pítça', 'Amburgui', 'Çalgado', 'Assaí', 'Zalada', 'Sanduicheicheihce', 'Pitzza', 'Comida de baiano', 'Comida']
+            isShown: false,    // variavel que controla a visibilidade do menu de categorias
+            altura: new Animated.Value(0),    // valor inicial da altura do menu de categorias
+            categorias: ['Pítça', 'Amburgui', 'Çalgado', 'Assaí', 'Zalada', 'Sanduicheicheihce', 'Pitzza', 'Comida de baiano', 'Comida'],
+            searchBarFocused: false    // variavel que muda de acordo com o focus da barra de pesquisa
         }
+    }
+
+    toSearch(){
+        if(!this.state.searchBarFocused){
+            alert('abriu')
+            this.setState({searchBarFocused: true});
+            return;
+        }
+
+        this.setState({searchBarFocused: false});
+        alert('fechou');
+
+        return
     }
 
     renderCategorias() {
@@ -56,7 +70,7 @@ class Cabecalho extends Component {
     render() {
         return (
             <Animated.View style={estilo.cabecalho}>
-                <OpaInput placeholder="Pesquise seu restaurante favorito!" />
+                <OpaInput placeholder="Pesquise seu restaurante favorito!" onFocus={()=> this.toSearch()} />
                 {this.renderCategorias(this.state.categorias)}
                 <OpaBotao estilo="categoria" acao={() => this.showCategoria()}>
                     Categorias
