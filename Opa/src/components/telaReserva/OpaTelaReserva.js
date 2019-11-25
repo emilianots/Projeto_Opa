@@ -23,7 +23,11 @@ class OpaTelaReserva extends Component {
                     </View>
                 </View>
 
-                <OpaIcons style={{margin: 80}} name='home' size={150} color='#ff5c5c'/>
+                <OpaIcons style={{marginTop: 80}} name='home' size={110} color='#ff5c5c'/>
+
+                <TouchableOpacity style={estilo.botaoTerceario}>
+                    <Text style={estilo.botaoTercearioTexto}>Explorar restaurantes</Text>
+                </TouchableOpacity>
 
                 
                 
