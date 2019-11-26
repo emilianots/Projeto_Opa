@@ -31,7 +31,7 @@ class TelaListarRestaurante extends Component {
         //title: 'Mostrando resultados para ' + this.state.categoria
     }
 
-    renderItemList(nome, key, nota, imgULR) {
+    renderItemList(nome, key, nota, fotoURL) {
         return (
             <TouchableOpacity underlayColor='red' >
                 <View style={{ backgroundColor: 'white', width: '100%', flexDirection: 'row', borderRadius: 7, marginBottom: 10 }}>
@@ -57,9 +57,9 @@ class TelaListarRestaurante extends Component {
             <View style={{ flex: 1, width: '97%', paddingHorizontal: 15 }}>
                 <FlatList
                     data={this.props.resultado}
-                    showsVerticalScrollIndicator={false}
+                    showsHorizontalScrollIndicator={false}
                     renderItem={({ item }) => // <-- sem chaves aqui
-                        this.renderItemList(item.nome, item.key, item.nota, item.imagemULR)
+                        this.renderItemList(item.nome, item.key, item.nota, item.fotoURL)
                     }
                 />
             </View>

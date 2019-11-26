@@ -6,36 +6,65 @@ import { createBottomTabNavigator } from 'react-navigation-tabs';
 import { createStackNavigator } from 'react-navigation-stack'
 
 //icons
-import Ionicons from 'react-native-vector-icons/Ionicons';
-import Istoicons from 'react-native-vector-icons/Fontisto';
-import Awesomeicons from 'react-native-vector-icons/FontAwesome';
-import Materialicons from 'react-native-vector-icons/MaterialCommunityIcons'
-
+import { createIconSetFromFontello } from 'react-native-vector-icons';
+import fontelloConfig from '../config-icons.json';
+OpaIcons = createIconSetFromFontello(fontelloConfig);
 
 
 import {
     //Telas principais do app
     OpaTelaHome,
-    OpaTelaMapa,
+    OpaTelaReserva,
+    OpaTelaQrcode,
     OpaTelaComanda,
     OpaTelaCardapio,
     OpaTelaPerfil
 } from './components/index';
 
-import {TelaListarRestaurante} from './components/telaHome/TelaListartRestaurante'
+import { TelaListarRestaurante } from './components/telaHome/TelaListartRestaurante'
+import { ExplorarRestaurantes } from './components/telaReserva/ExplorarRestaurantes'
+import { RestauranteReservar } from './components/telaReserva/RestauranteReservar'
 
 
 const StackHome = createStackNavigator({
     HomeScreen: {
         screen: OpaTelaHome,
     },
-    ListarRestaurantes:{
+    ListarRestaurantes: {
         screen: TelaListarRestaurante
-    }
+    },
 },
     {
         initialRouteName: 'HomeScreen'
     }
+)
+
+const StackReserva = createStackNavigator({
+    ReservaScreen: {
+        screen: OpaTelaReserva,
+        navigationOptions: {
+            headerShown: false,
+
+        }
+    },
+    ExplorarRestaurantes: {
+        screen: ExplorarRestaurantes,
+        navigationOptions: {
+            headerShown: false,
+
+        }
+    },
+    RestauranteReservar:{
+        screen: RestauranteReservar,
+        navigationOptions: {
+            headerTintColor: '#fff',
+            title: "Reserva",   
+            headerStyle: {
+                backgroundColor: '#ff5c5c',
+            },
+        }
+    }
+},
 )
 
 const TabNavigator = createBottomTabNavigator({
@@ -43,36 +72,36 @@ const TabNavigator = createBottomTabNavigator({
         screen: StackHome,
         navigationOptions: {
             tabBarLabel: 'Home',
-            tabBarIcon: ({ tintColor }) => (
-                <Ionicons name='md-home' size={22} color="gray" />
-              )
-        }
-    },
-    // Mapa: {
-    //     screen: OpaTelaMapa,
-    //     navigationOptions: {
-    //         tabBarLabel: 'Mapa'
-    //     }
-    // },
-    Cardapio: {
-        screen: OpaTelaCardapio,
-        navigationOptions: {
-            tabBarLabel: 'Reserva',
-            tabBarIcon: ({ tintColor }) => (
-                <Ionicons name='md-list' size={22} color="gray" />
-              )
+            tabBarIcon: ({ tintColor, focused }) => (
+                <OpaIcons name={focused ? 'home-a' : 'home'} size={22} color={tintColor} />
+
+            )
         }
     },
 
-    BotaoDoido: {
-        screen: OpaTelaComanda,
+    Reserva: {
+        screen: StackReserva,
+        navigationOptions: {
+            tabBarLabel: 'Reservar',
+            tabBarIcon: ({ tintColor, focused }) => (
+                <OpaIcons name={focused ? 'reservar-a' : 'reservar'} size={22} color={tintColor} />
+
+            )
+        }
+    },
+
+
+    Qrcode: {
+        screen: OpaTelaQrcode,
         navigationOptions: {
             tabBarLabel: ' ',
-            
-            tabBarIcon: ({ tintColor }) =>
-                <View style={{backgroundColor: '#ff5c5c', width: 60, height: 60, borderRadius: 100, alignItems: 'center',
-                justifyContent: 'center', marginBottom: 20}}><Materialicons name='qrcode-scan' size={35} color="white" /></View>
-                  
+
+            tabBarIcon: (
+                <View style={{
+                    backgroundColor: '#ff5c5c', width: 60, height: 60, borderRadius: 100, alignItems: 'center',
+                    justifyContent: 'center', position: "absolute", top: -20, elevation: 2
+                }}><OpaIcons name='qr-code' size={35} color="white" /></View>
+            )
         }
     },
 
@@ -80,37 +109,37 @@ const TabNavigator = createBottomTabNavigator({
         screen: OpaTelaComanda,
         navigationOptions: {
             tabBarLabel: 'Comanda',
-            tabBarIcon: ({ tintColor }) => (
-                <Istoicons name='file-1' size={22} color="gray" />
-              )
+            tabBarIcon: ({ tintColor, focused }) => (
+                <OpaIcons name={focused ? 'comanda-a' : 'comanda'} size={22} color={tintColor} />
+
+            )
         }
     },
     Perfil: {
         screen: OpaTelaPerfil,
         navigationOptions: {
             tabBarLabel: 'Perfil',
-            tabBarIcon: ({ tintColor }) => (
-                <Awesomeicons name='user-o' size={22} color="gray" />
-              )
+            tabBarIcon: ({ tintColor, focused }) => (
+                <OpaIcons name={focused ? 'perfil-a' : 'perfil'} size={22} color={tintColor} />
+            )
         }
-    }
+    },
 },
     {
         tabBarOptions: {
-            activeTintColor: 'black',
+            activeTintColor: '#ff5c5c',
             inactiveTintColor: 'gray',
-            iconStyle:{
-                paddingTop: 10,
-            },
-
-            tabStyle:{
-                paddingTop: 10,
-            },
 
             labelStyle: {
+                paddingBottom: 5,
                 fontSize: 11,
                 fontFamily: 'Montserrat-Medium'
             },
+
+            style: {
+                paddingTop: 5,
+                backgroundColor: '#fff',
+            }
         },
     }
 );

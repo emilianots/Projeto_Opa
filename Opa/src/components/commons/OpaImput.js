@@ -13,6 +13,7 @@ class OpaInput extends Component {
                     placeholder={this.props.placeholder}
                     placeholderTextColor='gray'
                     valor={this.props.valor} />
+                    <OpaIcons style={{marginRight: 10, position: 'absolute', top: 12, right: 30 }} name='lupa' size={22} color='#ff5c5c'/>
             </View>
         )
     }

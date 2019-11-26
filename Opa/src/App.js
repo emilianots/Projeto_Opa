@@ -19,7 +19,7 @@ export default class App extends Component {
 
   async storeData() {
     try {
-      await AsyncStorage.setItem('item', 'valor');
+      await AsyncStorage.setItem('item', 'texto');
     } catch (e) {
       console.log(e);
     }
@@ -28,9 +28,11 @@ export default class App extends Component {
   render() {
     this.storeData();
     return (
+      <View style={{ flex: 1, backgroundColor: "#eee" }}>
+        <TabNavigator />
+      </View>
       //navegação principal
       //abaixo mostra as tabs de cada tela principal do app - home, cardápio, comanda, etc.
-      <TabNavigator />
     )
   }
 }

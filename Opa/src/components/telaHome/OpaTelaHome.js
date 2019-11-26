@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { View, Text, ScrollView, AsyncStorage } from 'react-native';
 import { Cabecalho, SecaoHome, OpaSpinner, CabecalhoSecao, CorpoSecao } from '../commons/index';
-import TelaListarRestaurante from './TelaListartRestaurante'
+import TelaListarRestaurante from './TelaListartRestaurante';
+import {QRCodeScanner} from 'react-native-qrcode-scanner';
 
 import * as firebase from 'firebase';
 import 'firebase/firestore';
@@ -32,11 +33,12 @@ class OpaTelaHome extends Component {
         let restaurantes = [];
 
         query.forEach((doc) => {
-            const { nome, nota } = doc.data();
+            const { nome, nota, fotoURL } = doc.data();
             restaurantes.push({
                 key: doc.id,
                 nome,
-                nota
+                nota,
+                fotoURL,
             })
         });
 
@@ -47,7 +49,6 @@ class OpaTelaHome extends Component {
         this.unscribe = this.ref.onSnapshot(this.atualizarLista.bind(this)); //o unscribe fica escutando qualquer mudança na coleção 'restaurantes'
         try {
             const valor = await AsyncStorage.getItem('item');
-            console.log(valor + ' eeeeeee');
         } catch (e) {
             console.log(e);
         }
@@ -64,7 +65,7 @@ class OpaTelaHome extends Component {
         //abaixo, chama o componente que renderiza o cabeçalho com a barra de pesquisa
         // e chama tbm o componente responsavel por renderizar a seção de restarantes específicas
         return (
-            <View style={{ flex: 1, alignItems: 'center', backgroundColor: '#eee' }}>
+            <View style={{ flex: 1, alignItems: 'center', backgroundColor: '#f5f5f5' }}>
                 <Cabecalho navigation={this.props.navigation} />
                 <ScrollView>
                     {/* 

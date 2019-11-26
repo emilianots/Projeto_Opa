@@ -1,25 +1,65 @@
 import { StyleSheet } from 'react-native'
 
 const corPrimaria = '#ff5c5c';
+const corSecundaria = '#f6f6f6';
 const fontePrimaria = 'Montserrat-Medium';
 const fonteSecundaria = 'Gotham Light';
 
 const estilo = StyleSheet.create({
     app: {
         flex: 1,
-        alignItems: 'center'
+        alignItems: 'center',
+        backgroundColor: corSecundaria,
+    },
+    
+    textTitulo: {
+        fontSize: 24,
+        paddingTop: 5,
+        color: '#fff'
+    },
+
+    textValor: {
+        paddingTop: 20,
+        fontSize: 30,
+        color: '#fff'
     },
 
     cabecalho: {
-        width: '105%',
+        width: '100%',
         marginBottom: 10,
         paddingVertical: 10,
         paddingHorizontal: 20,
         backgroundColor: corPrimaria,
         alignItems: 'center',
-        borderBottomLeftRadius: 40,
-        borderBottomRightRadius: 40
+        borderBottomLeftRadius: 20,
+        borderBottomRightRadius: 20
     },
+
+    cabecalho2: {
+        overflow: "visible",
+        width: '100%',
+        height: '28%',
+        marginBottom: 20,
+        paddingVertical: 10,
+        paddingHorizontal: 20,
+        backgroundColor: corPrimaria,
+        alignItems: 'center',
+        borderBottomLeftRadius: 20,
+        borderBottomRightRadius: 20,
+    },
+
+    // cabecalho3: {
+    //     width: '100%',
+    //     height: '30%',
+    //     marginBottom: 5,
+    //     paddingVertical: 10,
+    //     paddingHorizontal: 20,
+    //     backgroundColor: corPrimaria,
+    //     alignItems: 'center',
+    //     borderBottomLeftRadius: 20,
+    //     borderBottomRightRadius: 20,
+        
+    // },
 
     categoriaTrack:{
         width: '85%',
@@ -54,15 +94,58 @@ const estilo = StyleSheet.create({
 
     // boatao primario -----
     botaoPrimario: {
+        overflow: 'hidden',
+        width: 130,
         padding: 10,
+        margin: 30,
         borderRadius: 100,
-        backgroundColor: 'salmon',
-        borderColor: corPrimaria,
-        alignItems: 'center'
+        borderWidth: 1,
+        borderColor: '#fff',
+        backgroundColor: '#fff',
+        alignItems: 'center',
     },
+
     botaoPrimarioTexto: {
+        fontSize: 16,
         fontWeight: 'bold',
-        color: 'white',
+        color: corPrimaria,
+        fontFamily: fontePrimaria,
+    },
+//botao secundario
+    botaoSecundario: {
+        overflow: 'hidden',
+        width: 130,
+        padding: 10,
+        margin: 30,
+        borderRadius: 100,
+        borderWidth: 1,
+        borderColor: '#fff',
+        alignItems: 'center',
+    },
+    
+    botaoSecundarioTexto: {
+        fontSize: 16,
+        fontWeight: 'bold',
+        color: '#fff',
+        fontFamily: fontePrimaria
+    },
+//botao terceario
+    botaoTerceario: {
+        overflow: 'hidden',
+        width: 230,
+        padding: 12,
+        margin: 20,
+        borderRadius: 100,
+        borderWidth: 1,
+        borderColor: '#fff',
+        backgroundColor: corPrimaria,
+        alignItems: 'center',
+    },
+
+    botaoTercearioTexto: {
+        fontSize: 20,
+        fontWeight: 'bold',
+        color: '#fff',
         fontFamily: fontePrimaria
     },
 
@@ -113,7 +196,7 @@ const estilo = StyleSheet.create({
         margin: 9,
         marginBottom: 15,
         position: 'relative',
-        borderRadius: 8,
+        borderRadius: 10,
         backgroundColor: 'gray',
         alignItems: 'center'
     
@@ -132,7 +215,7 @@ const estilo = StyleSheet.create({
         width: '100%',
         height: '100%',
         overflow: 'hidden',
-        borderRadius: 20
+        borderRadius: 10
         },
 
     restauranteNome: {
@@ -151,7 +234,59 @@ const estilo = StyleSheet.create({
         shadowOpacity: 0.8,
         shadowRadius: 1,
         elevation: 4,
+    },
+
+    //Estilos aba perfil
+    imgPerfil: {
+        marginTop: 20,
+        marginBottom: 5,
+        borderRadius: 100,
+        width: 100,
+        height: 100,
+    },
+
+    optionsBlock: {
+        padding: 20,
+        borderRadius: 20,
+        width: 330,
+        height: 68,
+        backgroundColor: '#fff',
+        flexDirection: 'row',
+        marginBottom: 12,
+        elevation: 1,
+    },
+    textOptionsBlock:{
+        fontSize: 20,
+        color: corPrimaria,
+    },
+
+    //geral
+    infoBlock: {
+        padding: 20,
+        borderRadius: 20,
+        width: 330,
+        height: 80,
+        backgroundColor: '#fff',
+        flexDirection: 'row',
+        marginBottom: 12,
+        elevation: 1,
+    },
+
+    infoBlock2: {
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: 20,
+        borderRadius: 20,
+        width: 320,
+        height: 60,
+        backgroundColor: '#fff',
+        flexDirection: 'row',
+        marginBottom: 12,
+        elevation: 3,
+        position: 'absolute',
+        bottom: -30,
     }
+
 })
 
 export default estilo

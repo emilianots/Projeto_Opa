@@ -4,7 +4,8 @@ export * from './telaHome/OpaTelaHome';
 export * from './telaPerfil/OpaTelaPerfil';
 export * from './telaComanda/OpaTelaComanda';
 export * from './telaCardapio/OpaTelaCardapio';
-export * from './telaMapa/OpaTelaMapa';
+export * from './telaQrcode/OpaTelaQrcode';
+export * from './telaReserva/OpaTelaReserva';
 
 
 // COMPONENTES FILHOS
