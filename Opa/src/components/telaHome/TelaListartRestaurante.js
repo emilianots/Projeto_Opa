@@ -13,7 +13,6 @@ class TelaListarRestaurante extends Component {
         this.ref = firebase.firestore().collection('produtos');
         const categoria = this.props.navigation.getParam('categoria', null)
         this.state = {
-            categoria: "",
             produtos: [],
             carregando: true
         };

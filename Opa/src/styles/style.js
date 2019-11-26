@@ -68,13 +68,15 @@ const estilo = StyleSheet.create({
     },
 
     categoriaCard: {
-        width: 130,
-        height: 130,
+        minWidth: '10%',
+        paddingVertical: 5,
+        paddingHorizontal: 10,
         marginHorizontal: 5,
         backgroundColor: 'white',
-        borderRadius: 7,
+        borderRadius: 50,
         overflow: 'hidden',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        alignItems: 'center'
     },
 
     categoriaImg: {
@@ -157,8 +159,8 @@ const estilo = StyleSheet.create({
     },
 
 
-    //botao categoria
-    botaoCategoria: {
+    //botao de mostrar categoria
+    botaoShowCategoria: {
         paddingHorizontal: 15,
         paddingVertical: 3,
         backgroundColor: 'white',
@@ -171,6 +173,13 @@ const estilo = StyleSheet.create({
         color: corPrimaria,
         fontFamily: fontePrimaria
     },
+
+    // botão de categoria
+
+    botaoCategoria: {
+
+    },
+
     // abaixo os estilos do cabeçalho das seções na home
     secaoCabecalho: {
         flexDirection: 'row',

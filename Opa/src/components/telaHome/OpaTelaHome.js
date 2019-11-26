@@ -66,7 +66,7 @@ class OpaTelaHome extends Component {
         // e chama tbm o componente responsavel por renderizar a seção de restarantes específicas
         return (
             <View style={{ flex: 1, alignItems: 'center', backgroundColor: '#f5f5f5' }}>
-                <Cabecalho navigation={this.props.navigation} />
+                <Cabecalho navigation={this.props.navigation} tipo='principal' />
                 <ScrollView>
                     {/* 
                         Abaixo foi passada a propriedade navigation para poder ser realizada a navegação pelos componentes filhos

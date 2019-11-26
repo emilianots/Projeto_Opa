@@ -1,19 +1,42 @@
 import React, { Component } from "react";
-import { TouchableOpacity, Animated, Image } from "react-native";
+import { TouchableOpacity, Animated, Text, View } from "react-native";
 import estilo from "../../styles/style";
-import { OpaInput, OpaBotao } from './index'
+import { OpaInput, OpaBotao, OpaSpinner } from './index'
+
+import * as firebase from 'firebase';
+import 'firebase/firestore';
 
 
 class Cabecalho extends Component {
     constructor() {
         super()
+        this.unscribe = null;
+        this.ref = firebase.firestore().collection("categorias");
+
         this.state = {
+            loading: true,
             isShown: false,    // variavel que controla a visibilidade do menu de categorias
             altura: new Animated.Value(0),    // valor inicial da altura do menu de categorias
-            categorias: ['Pítça', 'Amburgui', 'Çalgado', 'Assaí', 'Zalada', 'Sanduicheicheihce', 'Pitzza', 'Comida de baiano', 'Comida'],
+            categorias: [],
             searchBarFocused: false    // variavel que muda de acordo com o focus da barra de pesquisa
         }
+
     }
+
+    atualizarLista(query) { // metodo enviado para atualizar a lista de restaurantes cadastrados
+        let categorias = [];
+
+        query.forEach((doc) => {
+            const { nomeCategoria } = doc.data();
+            categorias.push({
+                key: doc.id,
+                nomeCategoria
+            })
+        });
+
+        this.setState({ categorias, loading: false }) // atualiza o estado do componente
+    }
+
 
     toSearch() {
         if (!this.state.searchBarFocused) {
@@ -29,6 +52,17 @@ class Cabecalho extends Component {
     }
 
     renderCategorias() {
+        if (this.state.loading) {
+            return (
+                <Animated.View
+                    style={estilo.categoriaTrack}
+                    height={this.state.altura}
+                >
+                    <OpaSpinner cor='white' />
+                </Animated.View>
+
+            )
+        }
         return (
             <Animated.FlatList
                 style={estilo.categoriaTrack}
@@ -36,8 +70,8 @@ class Cabecalho extends Component {
                 data={this.state.categorias}
                 alignItems='center'
                 renderItem={({ item, index }) =>
-                    <TouchableOpacity onPress={() => this.props.navigation.navigate('ListarRestaurantes', { categoria: item })} style={estilo.categoriaCard}>
-                        <Image resizeMethod='scale' style={estilo.categoriaImg} source={require('../../../assets/images/pizza.jpeg')} />
+                    <TouchableOpacity onPress={() => this.props.navigation.navigate('ListarRestaurantes', { categoria: item.key })} style={estilo.categoriaCard}>
+                        <Text>{item.nomeCategoria}</Text>
                     </TouchableOpacity>
                 }
                 horizontal={true}
@@ -46,19 +80,25 @@ class Cabecalho extends Component {
 
     }
 
+    async componentDidMount() {
+        this.unscribe = this.ref.onSnapshot(this.atualizarLista.bind(this)); // buscando da coleção de categorias
+    }
+
     // mostra as categorias animando a altura do cabeçalho
     showCategoria() {
         if (!this.state.isShown) { // se o cabeçalho estiver fechado ele entra nesse if
             //isshown indica o estado do cabeçalho
+
             Animated.timing(this.state.altura, {// passa o valor que se quer alterar como o primeiro parametro
-                toValue: 140, // novo valor com animação
+                toValue: 40, // novo valor com animação
                 duration: 150, // tempo da animação
             }).start()
+            
             this.setState({ isShown: true }); // modifica o estado setando que o cabeçalho esta aberto
             return;
         }
 
-        // se ele não etrear no if acima significa que o cabeçalho ja esta abert
+        // se ele não entrar no if acima significa que o cabeçalho ja esta aberto
         Animated.timing(this.state.altura, { // executa o cotrario do if acima
             toValue: 0,
             duration: 150
@@ -73,10 +113,10 @@ class Cabecalho extends Component {
                 <OpaInput
                     placeholder="Pesquise um restaurante ou comida!"
                     onFocus={() => this.toSearch()}    // esse metodo muda o estado que interage com a animação da barra de pesquisa
-                    // a props 'onFocus' aciona de acordo com o 'focus' e 'blur'
+                // a props 'onFocus' aciona de acordo com o 'focus' e 'blur'
                 />
                 {this.renderCategorias(this.state.categorias)}
-                <OpaBotao estilo="categoria" acao={() => this.showCategoria()}>
+                <OpaBotao estilo="botaoCategoria" acao={() => this.showCategoria()}>
                     Categorias
                 </OpaBotao>
             </Animated.View>

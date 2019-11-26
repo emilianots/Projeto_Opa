@@ -12,8 +12,14 @@ class OpaBotao extends Component {
                     <Text style={estilo.botaoPrimarioTexto}>{this.props.children}</Text>
                 </TouchableOpacity>
             )
-        } else if (this.props.estilo === 'categoria') {
+        } else if (this.props.estilo === 'botaoCategoria') {
             return (
+                <TouchableOpacity style={estilo.botaoShowCategoria} onPress={ this.props.acao}>
+                    <Text style={estilo.botaoCategoriaTexto}>{this.props.children}</Text>
+                </TouchableOpacity>
+            )
+        } else if( this.props.estilo === ''){
+            return(
                 <TouchableOpacity style={estilo.botaoCategoria} onPress={ this.props.acao}>
                     <Text style={estilo.botaoCategoriaTexto}>{this.props.children}</Text>
                 </TouchableOpacity>
