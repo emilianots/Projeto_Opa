@@ -6,9 +6,9 @@ import { createBottomTabNavigator } from 'react-navigation-tabs';
 import { createStackNavigator } from 'react-navigation-stack'
 
 //icons
-import {createIconSetFromFontello} from 'react-native-vector-icons'; 
-import fontelloConfig from './config.json'; 
-OpaIcons = createIconSetFromFontello (fontelloConfig); 
+import { createIconSetFromFontello } from 'react-native-vector-icons';
+import fontelloConfig from '../config-icons.json';
+OpaIcons = createIconSetFromFontello(fontelloConfig);
 
 
 import {
@@ -21,20 +21,50 @@ import {
     OpaTelaPerfil
 } from './components/index';
 
-import {TelaListarRestaurante} from './components/telaHome/TelaListartRestaurante'
+import { TelaListarRestaurante } from './components/telaHome/TelaListartRestaurante'
+import { ExplorarRestaurantes } from './components/telaReserva/ExplorarRestaurantes'
+import { RestauranteReservar } from './components/telaReserva/RestauranteReservar'
 
 
 const StackHome = createStackNavigator({
     HomeScreen: {
         screen: OpaTelaHome,
     },
-    ListarRestaurantes:{
+    ListarRestaurantes: {
         screen: TelaListarRestaurante
-    }
+    },
 },
     {
         initialRouteName: 'HomeScreen'
     }
+)
+
+const StackReserva = createStackNavigator({
+    ReservaScreen: {
+        screen: OpaTelaReserva,
+        navigationOptions: {
+            headerShown: false,
+
+        }
+    },
+    ExplorarRestaurantes: {
+        screen: ExplorarRestaurantes,
+        navigationOptions: {
+            headerShown: false,
+
+        }
+    },
+    RestauranteReservar:{
+        screen: RestauranteReservar,
+        navigationOptions: {
+            headerTintColor: '#fff',
+            title: "Reserva",   
+            headerStyle: {
+                backgroundColor: '#ff5c5c',
+            },
+        }
+    }
+},
 )
 
 const TabNavigator = createBottomTabNavigator({
@@ -43,31 +73,34 @@ const TabNavigator = createBottomTabNavigator({
         navigationOptions: {
             tabBarLabel: 'Home',
             tabBarIcon: ({ tintColor, focused }) => (
-                <OpaIcons name={focused ? 'home-a' : 'home'} size={22} color={tintColor}/>
+                <OpaIcons name={focused ? 'home-a' : 'home'} size={22} color={tintColor} />
 
-              )
+            )
         }
     },
 
     Reserva: {
-        screen: OpaTelaReserva,
+        screen: StackReserva,
         navigationOptions: {
-            tabBarLabel: 'Reserva',
+            tabBarLabel: 'Reservar',
             tabBarIcon: ({ tintColor, focused }) => (
-                <OpaIcons name={focused ? 'reservar-a' : 'reservar'} size={22} color={tintColor}/>
+                <OpaIcons name={focused ? 'reservar-a' : 'reservar'} size={22} color={tintColor} />
 
-              )
+            )
         }
     },
+
 
     Qrcode: {
         screen: OpaTelaQrcode,
         navigationOptions: {
             tabBarLabel: ' ',
-            
+
             tabBarIcon: (
-                <View style={{backgroundColor: '#ff5c5c', width: 60, height: 60, borderRadius: 100, alignItems: 'center',
-                justifyContent: 'center', position: "absolute", top: -20, elevation: 2}}><OpaIcons name='qr-code' size={35} color="white" /></View>
+                <View style={{
+                    backgroundColor: '#ff5c5c', width: 60, height: 60, borderRadius: 100, alignItems: 'center',
+                    justifyContent: 'center', position: "absolute", top: -20, elevation: 2
+                }}><OpaIcons name='qr-code' size={35} color="white" /></View>
             )
         }
     },
@@ -77,9 +110,9 @@ const TabNavigator = createBottomTabNavigator({
         navigationOptions: {
             tabBarLabel: 'Comanda',
             tabBarIcon: ({ tintColor, focused }) => (
-                <OpaIcons name={focused ? 'comanda-a' : 'comanda'} size={22} color={tintColor}/>
+                <OpaIcons name={focused ? 'comanda-a' : 'comanda'} size={22} color={tintColor} />
 
-              )
+            )
         }
     },
     Perfil: {
@@ -87,8 +120,8 @@ const TabNavigator = createBottomTabNavigator({
         navigationOptions: {
             tabBarLabel: 'Perfil',
             tabBarIcon: ({ tintColor, focused }) => (
-                <OpaIcons name={focused ? 'perfil-a' : 'perfil'} size={22} color={tintColor}/>
-              )
+                <OpaIcons name={focused ? 'perfil-a' : 'perfil'} size={22} color={tintColor} />
+            )
         }
     },
 },

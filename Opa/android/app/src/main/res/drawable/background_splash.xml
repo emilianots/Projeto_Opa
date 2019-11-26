@@ -6,8 +6,8 @@ xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:drawable="@color/primary" />
 
     <item
-        android:width="600px"
-        android:height="314px"
+        android:width="300px"
+        android:height="291px"
         android:drawable="@drawable/screen"
         android:gravity="center"
     />

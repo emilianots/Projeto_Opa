@@ -11,7 +11,7 @@ const estilo = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: corSecundaria,
     },
-
+    
     textTitulo: {
         fontSize: 24,
         paddingTop: 5,
@@ -38,32 +38,31 @@ const estilo = StyleSheet.create({
     cabecalho2: {
         overflow: "visible",
         width: '100%',
-        height: '30%',
-        marginBottom: 5,
+        height: '28%',
+        marginBottom: 20,
         paddingVertical: 10,
         paddingHorizontal: 20,
         backgroundColor: corPrimaria,
         alignItems: 'center',
         borderBottomLeftRadius: 20,
         borderBottomRightRadius: 20,
-
     },
 
-    cabecalho3: {
-        width: '100%',
-        height: '30%',
-        marginBottom: 5,
-        paddingVertical: 10,
-        paddingHorizontal: 20,
-        backgroundColor: corPrimaria,
-        alignItems: 'center',
-        borderBottomLeftRadius: 20,
-        borderBottomRightRadius: 20,
+    // cabecalho3: {
+    //     width: '100%',
+    //     height: '30%',
+    //     marginBottom: 5,
+    //     paddingVertical: 10,
+    //     paddingHorizontal: 20,
+    //     backgroundColor: corPrimaria,
+    //     alignItems: 'center',
+    //     borderBottomLeftRadius: 20,
+    //     borderBottomRightRadius: 20,
+        
+    // },
 
-    },
-
-    categoriaTrack: {
-        width: '90%',
+    categoriaTrack:{
+        width: '85%',
         marginVertical: 10,
     },
 
@@ -120,7 +119,7 @@ const estilo = StyleSheet.create({
         color: corPrimaria,
         fontFamily: fontePrimaria,
     },
-    //botao secundario
+//botao secundario
     botaoSecundario: {
         overflow: 'hidden',
         width: 130,
@@ -131,14 +130,14 @@ const estilo = StyleSheet.create({
         borderColor: '#fff',
         alignItems: 'center',
     },
-
+    
     botaoSecundarioTexto: {
         fontSize: 16,
         fontWeight: 'bold',
         color: '#fff',
         fontFamily: fontePrimaria
     },
-    //botao terceario
+//botao terceario
     botaoTerceario: {
         overflow: 'hidden',
         width: 230,
@@ -232,7 +231,7 @@ const estilo = StyleSheet.create({
         height: '100%',
         overflow: 'hidden',
         borderRadius: 10
-    },
+        },
 
     restauranteNome: {
         width: '80%',
@@ -257,8 +256,8 @@ const estilo = StyleSheet.create({
         marginTop: 20,
         marginBottom: 5,
         borderRadius: 100,
-        width: 100,
-        height: 100,
+        width: "2%",
+        height: 20,
     },
 
     optionsBlock: {
@@ -271,7 +270,7 @@ const estilo = StyleSheet.create({
         marginBottom: 12,
         elevation: 1,
     },
-    textOptionsBlock: {
+    textOptionsBlock:{
         fontSize: 20,
         color: corPrimaria,
     },
@@ -286,6 +285,21 @@ const estilo = StyleSheet.create({
         flexDirection: 'row',
         marginBottom: 12,
         elevation: 1,
+    },
+
+    infoBlock2: {
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: 20,
+        borderRadius: 20,
+        width: 320,
+        height: 60,
+        backgroundColor: '#fff',
+        flexDirection: 'row',
+        marginBottom: 12,
+        elevation: 3,
+        position: 'absolute',
+        bottom: -30,
     }
 
 })

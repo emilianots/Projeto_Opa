@@ -5956,11 +5956,14 @@ react-native-gesture-handler@^1.5.0:
     invariant "^2.2.4"
     prop-types "^15.7.2"
 
+<<<<<<< HEAD
 react-native-ionicons@^4.6.3:
   version "4.6.3"
   resolved "https://registry.yarnpkg.com/react-native-ionicons/-/react-native-ionicons-4.6.3.tgz#989886f1a9af61cf7a5a8b2c81a86bafd6718061"
   integrity sha512-5UgYIJ/BDuKCPlrmZSUDouCCXeiGsVq8TMwKK3l1T54z+IVNC0OKIxAIhitVIek6CLvtjVtBV/0qJyr5o6XCVg==
 
+=======
+>>>>>>> origin/opajoel
 react-native-permissions@^2.0.2, react-native-permissions@^2.0.3:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/react-native-permissions/-/react-native-permissions-2.0.3.tgz#b6da83e5e313e41ba5f70ff2c4567291766b0140"

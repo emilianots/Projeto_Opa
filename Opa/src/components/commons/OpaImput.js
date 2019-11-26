@@ -9,7 +9,6 @@ class OpaInput extends Component {
     render() {
         return (
             <View style={estilo.containerPesquisa}>
-                <Icon name='search' color='gray' size={20}/>
                 <TextInput
                     style={estilo.imputPesquisa}
                     placeholder={this.props.placeholder}
@@ -19,6 +18,7 @@ class OpaInput extends Component {
                     onFocus={this.props.onFocus}
                     onBlur={this.props.onFocus}
                 />
+                    <OpaIcons style={{marginRight: 10, top: 12, right: 30 }} name='lupa' size={22} color='#ff5c5c'/>
             </View>
         )
     }

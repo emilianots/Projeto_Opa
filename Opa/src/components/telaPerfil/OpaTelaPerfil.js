@@ -5,7 +5,7 @@ import estilo from "../../styles/style";
 
 //icons
 import {createIconSetFromFontello} from 'react-native-vector-icons'; 
-import fontelloConfig from '../../config.json'; 
+import fontelloConfig from '../../../config-icons.json'; 
 import { ScrollView } from 'react-native-gesture-handler';
 OpaIcons = createIconSetFromFontello (fontelloConfig); 
 
@@ -33,8 +33,8 @@ class OpaTelaPerfil extends Component {
                         <Text style={estilo.textTitulo}>{this.state.nomeUser}</Text>
                     <View style={{ flexDirection: 'row', overflow: "visible"}}>
                         <TouchableOpacity
-                            style={{backgroundColor: '#fff', borderRadius: 100, padding: 10, elevation: 2, position:"absolute", bottom: -30, left: 140}}>
-                                <OpaIcons name='relogio' size= {28} color= '#ff5c5c' />
+                            style={{backgroundColor: '#fff', borderRadius: 100, padding: 10, elevation: 2, position:"absolute", bottom: -20, left: 140}}>
+                                <OpaIcons name='edit' size= {28} color= '#ff5c5c' />
                             {/* <Text style={estilo.botaoPrimarioTexto}>Editar Perfil</Text> */}
                         </TouchableOpacity>
                     </View>
@@ -47,27 +47,27 @@ class OpaTelaPerfil extends Component {
                     </TouchableOpacity>
 
                     <TouchableOpacity style={estilo.optionsBlock}>
-                        <OpaIcons style={{marginRight: 10}} name='favoritar' size={22} color= '#ff5c5c'/>
+                        <OpaIcons style={{marginRight: 10}} name='cartao' size={22} color= '#ff5c5c'/>
                         <Text style={estilo.textOptionsBlock}>Pagamentos</Text>
                     </TouchableOpacity>
 
                     <TouchableOpacity style={estilo.optionsBlock}>
-                        <OpaIcons style={{marginRight: 10}} name='home' size={22} color= '#ff5c5c'/>
+                        <OpaIcons style={{marginRight: 10}} name='cupom' size={22} color= '#ff5c5c'/>
                         <Text style={estilo.textOptionsBlock}>Cupons</Text>
                     </TouchableOpacity>
 
                     <TouchableOpacity style={estilo.optionsBlock}>
-                        <OpaIcons style={{marginRight: 10}} name='home' size={22} color= '#ff5c5c'/>
+                        <OpaIcons style={{marginRight: 10}} name='sino' size={22} color= '#ff5c5c'/>
                         <Text style={estilo.textOptionsBlock}>Notificações</Text>
                     </TouchableOpacity>
 
                     <TouchableOpacity style={estilo.optionsBlock}>
-                        <OpaIcons style={{marginRight: 10}} name='home' size={22} color= '#ff5c5c'/>
+                        <OpaIcons style={{marginRight: 10}} name='seguranca' size={22} color= '#ff5c5c'/>
                         <Text style={estilo.textOptionsBlock}>Segurança</Text>
                     </TouchableOpacity>
 
                     <TouchableOpacity style={estilo.optionsBlock}>
-                        <OpaIcons style={{marginRight: 10}} name='home' size={22} color= '#ff5c5c'/>
+                        <OpaIcons style={{marginRight: 10}} name='config' size={22} color= '#ff5c5c'/>
                         <Text style={estilo.textOptionsBlock}>Configurações</Text>
                     </TouchableOpacity>
                 </ScrollView>

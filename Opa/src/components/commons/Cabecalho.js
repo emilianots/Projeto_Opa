@@ -81,29 +81,31 @@ class Cabecalho extends Component {
 
     async componentDidMount() {
         this.unscribe = this.ref.onSnapshot(this.atualizarLista.bind(this)); // buscando da coleção de categorias
+       
+        // let saida = this.ref.where('nomeCategoria' , '==', 'bebidas').get()
+        // .then( snapshot =>{
+        //     snapshot.forEach(doc =>{
+        //         console.log(doc.data())
+        //     })
+        // });
     }
 
-    // mostra as categorias animando a altura do cabeçalho
     showCategoria() {
-        if (!this.state.isShown) { // se o cabeçalho estiver fechado ele entra nesse if
-            //isshown indica o estado do cabeçalho
-
-            Animated.timing(this.state.altura, {// passa o valor que se quer alterar como o primeiro parametro
-                toValue: 40, // novo valor com animação
-                duration: 150, // tempo da animação
+        if (!this.state.isShown) {
+            Animated.timing(this.state.altura, {
+                toValue: 40, 
+                duration: 150,
             }).start()
-            
-            this.setState({ isShown: true }); // modifica o estado setando que o cabeçalho esta aberto
+
+            this.setState({ isShown: true });
             return;
         }
-
-        // se ele não entrar no if acima significa que o cabeçalho ja esta aberto
-        Animated.timing(this.state.altura, { // executa o cotrario do if acima
+        Animated.timing(this.state.altura, { 
             toValue: 0,
             duration: 150
         }).start();
 
-        this.setState({ isShown: false }); // indicando que o cabeçalho esta fechado
+        this.setState({ isShown: false }); 
     }
 
     render() {
@@ -111,8 +113,7 @@ class Cabecalho extends Component {
             <Animated.View style={estilo.cabecalho}>
                 <OpaInput
                     placeholder="Pesquise um restaurante ou comida!"
-                    onFocus={() => this.toSearch()}    // esse metodo muda o estado que interage com a animação da barra de pesquisa
-                // a props 'onFocus' aciona de acordo com o 'focus' e 'blur'
+                    onFocus={() => this.toSearch()}
                 />
                 {this.renderCategorias(this.state.categorias)}
                 <OpaBotao estilo="botaoCategoria" acao={() => this.showCategoria()}>

@@ -1,20 +1,18 @@
 import React, { Component } from 'react';
-import { View, Text, Button, TouchableOpacity } from 'react-native';
-import { OpaBotao, Cabecalho, OpaInput } from '../commons/index';
+import { View, Text, TouchableOpacity } from 'react-native';
 import estilo from "../../styles/style";
+import { Cabecalho2 } from '../commons/Cabecalho2';
 
 class OpaTelaReserva extends Component {
 
     render() {
         return (
             <View style={estilo.app}>
-                <View style={estilo.cabecalho}>
-                    <Text style={{color: '#fff', margin: 10, fontWeight: "bold", fontSize: 16}}>Para reservar uma mesa, escolha um local</Text>
-                    <OpaInput placeholder="Culinária, nome do restaurante..."/>
-                </View>
+                <Cabecalho2/>
+                
                 <View style={estilo.infoBlock}>
                     <View>
-                        <OpaIcons style={{marginRight: 10 }} name='home' size={40} color='#ff5c5c'/>
+                        <OpaIcons style={{marginRight: 10 }} name='local' size={40} color='#ff5c5c'/>
                     </View>
 
                     <View>
@@ -23,14 +21,14 @@ class OpaTelaReserva extends Component {
                     </View>
                 </View>
 
-                <OpaIcons style={{marginTop: 80}} name='home' size={110} color='#ff5c5c'/>
+                <OpaIcons style={{marginTop: 80, opacity: 0.3}} name='estabelecimento' size={140} color='#ff5c5c'/>
 
-                <TouchableOpacity style={estilo.botaoTerceario}>
+                <TouchableOpacity style={estilo.botaoTerceario}
+                    onPress = {() => this.props.navigation.navigate('ExplorarRestaurantes')}    
+                >
                     <Text style={estilo.botaoTercearioTexto}>Explorar restaurantes</Text>
                 </TouchableOpacity>
 
-                
-                
             </View>
         )
     }

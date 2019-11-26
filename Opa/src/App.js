@@ -30,7 +30,6 @@ export default class App extends Component {
     return (
       <View style={{ flex: 1, backgroundColor: "#eee" }}>
         <TabNavigator />
-
       </View>
       //navegação principal
       //abaixo mostra as tabs de cada tela principal do app - home, cardápio, comanda, etc.
