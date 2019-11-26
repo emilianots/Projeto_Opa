@@ -37,7 +37,6 @@ class Cabecalho extends Component {
         this.setState({ categorias, loading: false }) // atualiza o estado do componente
     }
 
-
     toSearch() {
         if (!this.state.searchBarFocused) {
             alert('abriu')

@@ -63,7 +63,7 @@ const estilo = StyleSheet.create({
     },
 
     categoriaTrack: {
-        width: '85%',
+        width: '90%',
         marginVertical: 10,
     },
 
