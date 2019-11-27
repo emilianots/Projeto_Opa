@@ -32,7 +32,7 @@ const StackHome = createStackNavigator({
     },
     ListarRestaurantes: {
         screen: TelaListarRestaurante,
-        navigationOptions:{
+        navigationOptions: {
             header: null
         }
     },
@@ -57,11 +57,11 @@ const StackReserva = createStackNavigator({
 
         }
     },
-    RestauranteReservar:{
+    RestauranteReservar: {
         screen: RestauranteReservar,
         navigationOptions: {
             headerTintColor: '#fff',
-            title: "Reserva",   
+            title: "Reserva",
             headerStyle: {
                 backgroundColor: '#ff5c5c',
             },
