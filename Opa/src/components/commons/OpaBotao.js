@@ -8,7 +8,7 @@ class OpaBotao extends Component {
     render() {
         if (this.props.estilo === 'primario') {
             return (
-                <TouchableOpacity style={estilo.botaoPrimario} onPress={()=> this.props.acao}>
+                <TouchableOpacity style={estilo.botaoPrimario} onPress={ this.props.acao}>
                     <Text style={estilo.botaoPrimarioTexto}>{this.props.children}</Text>
                 </TouchableOpacity>
             )
