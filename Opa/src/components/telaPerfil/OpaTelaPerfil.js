@@ -51,7 +51,9 @@ class OpaTelaPerfil extends Component {
                         <Text style={estilo.textOptionsBlock}>Pagamentos</Text>
                     </TouchableOpacity>
 
-                    <TouchableOpacity style={estilo.optionsBlock}>
+                    <TouchableOpacity style={estilo.optionsBlock}
+                        onPress = {() => this.props.navigation.navigate('Cupons')}
+                    >
                         <OpaIcons style={{marginRight: 10}} name='cupom' size={22} color= '#ff5c5c'/>
                         <Text style={estilo.textOptionsBlock}>Cupons</Text>
                     </TouchableOpacity>

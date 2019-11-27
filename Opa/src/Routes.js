@@ -24,6 +24,7 @@ import {
 import { TelaListarRestaurante } from './components/telaHome/TelaListartRestaurante'
 import { ExplorarRestaurantes } from './components/telaReserva/ExplorarRestaurantes'
 import { RestauranteReservar } from './components/telaReserva/RestauranteReservar'
+import { Cupons } from './components/telaPerfil/Cupons'
 
 
 const StackHome = createStackNavigator({
@@ -125,7 +126,7 @@ const TabNavigator = createBottomTabNavigator({
         }
     },
     Perfil: {
-        screen: OpaTelaPerfil,
+        screen: StackPerfil,
         navigationOptions: {
             tabBarLabel: 'Perfil',
             tabBarIcon: ({ tintColor, focused }) => (
