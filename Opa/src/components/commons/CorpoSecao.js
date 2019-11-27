@@ -17,7 +17,7 @@ class CorpoSecao extends Component {
 
 
         return (
-            <TouchableOpacity style={estilo.restauranteCard} onPress={() => this.props.navigation.navigate('OpaTelaCardapio')}>
+            <TouchableOpacity style={estilo.restauranteCard} onPress={() => this.props.navigation.navigate('OpaTelaCardapio', {id})}>
                 <View style={estilo.restauranteImg}>
                     <Image style={{ width: '100%', height: '100%' }} resizeMode='stretch' source={{uri: fotoURL }}/>
                 </View>

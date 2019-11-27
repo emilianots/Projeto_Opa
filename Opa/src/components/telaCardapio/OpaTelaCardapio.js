@@ -32,9 +32,10 @@ class OpaTelaCardapio extends Component {
     }
 
     render() {
+        // console.log(this.props.navigation.getParam('id'))
         return (
-            <View style={{ flex: 1, alignItems: 'center' }}>
-                <CabecalhoRestaurante />
+            <View style={{ flex: 1, alignItems: 'center', backgroundColor: '#f6f6f6' }}>
+                <CabecalhoRestaurante id={this.props.navigation.getParam('id', null)}/>
                 {this.renderCorpo()}
             </View>
         )
@@ -42,3 +43,4 @@ class OpaTelaCardapio extends Component {
 }
 
 export { OpaTelaCardapio };
+

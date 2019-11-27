@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, Button, TouchableOpacity, Image } from 'react-native';
-import { OpaBotao, Cabecalho, OpaInput } from './index';
+import { OpaBotao, Cabecalho, OpaInput, OpaSpinner } from './index';
 import estilo from "../../styles/style";
 
 //icons
@@ -10,7 +10,18 @@ OpaIcons = createIconSetFromFontello(fontelloConfig);
 
 class CabecalhoRestaurante extends Component {
 
+    constructor (){
+        super()
+        this.state = {
+            loading : true
+        }
+    }
+    
+
     render() {
+        if (this.state.loading) {
+            return <OpaSpinner tamanho={80} />
+        }        
         return (
             <View style={{ height: 180, alignItems: 'center', width: '100%' }}>
                 <Image style={{ width: '100%', height: '100%' }} resizeMode='cover' source={{ uri: 'https://i.ibb.co/zfNJ3w2/puro-acai.png' }} />
@@ -22,7 +33,7 @@ class CabecalhoRestaurante extends Component {
                     <View>
                         <View style={{ padding: 10, width: 250, flexDirection: 'row', justifyContent: "space-between" }}>
                             <View>
-                                <Text style={{ fontSize: 20 }}>Puro Açaí </Text>
+                                <Text style={{ fontSize: 20 }}>{this.props.id}</Text>
                                 <Text style={{ fontSize: 12 }}>Açaí</Text>
                             </View>
                             <Text style={{ minWidth: 30, maxHeight: 18, paddingHorizontal: 7, backgroundColor: '#ffab0a', borderRadius: 20, }}>4.5</Text>
