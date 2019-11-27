@@ -25,6 +25,7 @@ import {MigueScreen} from './components/commons/index';
 import { TelaListarRestaurante } from './components/telaHome/TelaListartRestaurante'
 import { ExplorarRestaurantes } from './components/telaReserva/ExplorarRestaurantes'
 import { RestauranteReservar } from './components/telaReserva/RestauranteReservar'
+import { Cupons } from './components/telaPerfil/Cupons'
 
 
 const StackHome = createStackNavigator({
@@ -35,6 +36,12 @@ const StackHome = createStackNavigator({
         screen: TelaListarRestaurante,
         navigationOptions: {
             header: null
+        }
+    },
+    OpaTelaCardapio:{
+        screen: OpaTelaCardapio,
+        navigationOptions: {
+            headerShown: false
         }
     },
 },
@@ -67,7 +74,7 @@ const StackReserva = createStackNavigator({
                 backgroundColor: '#ff5c5c',
             },
         }
-    }
+    },
 },
 )
 
@@ -106,7 +113,7 @@ const TabNavigator = createBottomTabNavigator({
 
 
     Qrcode: {
-        screen: OpaTelaQrcode,
+        screen: StackQrcode,
         navigationOptions: {
             tabBarLabel: ' ',
 

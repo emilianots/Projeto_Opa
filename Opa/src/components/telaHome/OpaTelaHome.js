@@ -82,7 +82,7 @@ class OpaTelaHome extends Component {
                     <View style={{ marginBottom: 20 }}>
                         <CabecalhoSecao titulo="Destaques" />
                         <CorpoSecao
-                            avigation={this.props.navigation}
+                            navigation={this.props.navigation}
                             lista={destaques.sort((obj1, obj2) => {
                                 if (obj1.nota > obj2.nota) {
                                     return -1

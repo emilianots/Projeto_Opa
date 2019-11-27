@@ -6,7 +6,7 @@ import TabNavigator from './Routes'
 import * as firebase from 'firebase';
 import firebaseConfig from '../firebaseData/firebaseKey'
 
-
+console.disableYellowBox = true;
 export default class App extends Component {
 
   constructor(props) {

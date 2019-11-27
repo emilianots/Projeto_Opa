@@ -21,7 +21,7 @@ class OpaTelaReserva extends Component {
                     </View>
                 </View>
 
-                <OpaIcons style={{marginTop: 80, opacity: 0.3}} name='estabelecimento' size={140} color='#ff5c5c'/>
+                <OpaIcons style={{marginTop: 80, opacity: 0.3}} name='restaurante' size={160} color='#ff5c5c'/>
 
                 <TouchableOpacity style={estilo.botaoTerceario}
                     onPress = {() => this.props.navigation.navigate('ExplorarRestaurantes')}    

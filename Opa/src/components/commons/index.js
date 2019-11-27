@@ -8,3 +8,4 @@ export * from './OpaSpinner';
 
 
 export * from './MigueScreen';
+export * from './CabecalhoRestaurante';

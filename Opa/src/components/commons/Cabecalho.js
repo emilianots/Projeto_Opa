@@ -6,6 +6,11 @@ import { OpaInput, OpaBotao, OpaSpinner } from './index'
 import * as firebase from 'firebase';
 import 'firebase/firestore';
 
+//icons
+import {createIconSetFromFontello} from 'react-native-vector-icons'; 
+import fontelloConfig from '../../../config-icons.json'; 
+OpaIcons = createIconSetFromFontello (fontelloConfig); 
+
 
 class Cabecalho extends Component {
     constructor() {
@@ -118,6 +123,7 @@ class Cabecalho extends Component {
                 {this.renderCategorias(this.state.categorias)}
                 <OpaBotao estilo="botaoCategoria" acao={() => this.showCategoria()}>
                     Categorias
+                    <OpaIcons style={{margin: 30}} name='angle-down' size={20} color= '#ff5c5c'/>
                 </OpaBotao>
             </Animated.View>
         )

@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import { View, Text, TouchableOpacity, Image } from 'react-native';
 import { OpaBotao, Cabecalho } from '../commons/index';
 import estilo from "../../styles/style";
+import { ScrollView } from 'react-native-gesture-handler';
 
 //icons
 import {createIconSetFromFontello} from 'react-native-vector-icons'; 
 import fontelloConfig from '../../../config-icons.json'; 
-import { ScrollView } from 'react-native-gesture-handler';
 OpaIcons = createIconSetFromFontello (fontelloConfig); 
 
 class OpaTelaPerfil extends Component {
@@ -34,7 +34,7 @@ class OpaTelaPerfil extends Component {
                     <View style={{ flexDirection: 'row', overflow: "visible"}}>
                         <TouchableOpacity
                             style={{backgroundColor: '#fff', borderRadius: 100, padding: 10, elevation: 2, position:"absolute", bottom: -20, left: 140}}>
-                                <OpaIcons name='edit' size= {28} color= '#ff5c5c' />
+                                <OpaIcons name='lapis' size= {28} color= '#ff5c5c' />
                             {/* <Text style={estilo.botaoPrimarioTexto}>Editar Perfil</Text> */}
                         </TouchableOpacity>
                     </View>
@@ -51,7 +51,9 @@ class OpaTelaPerfil extends Component {
                         <Text style={estilo.textOptionsBlock}>Pagamentos</Text>
                     </TouchableOpacity>
 
-                    <TouchableOpacity style={estilo.optionsBlock}>
+                    <TouchableOpacity style={estilo.optionsBlock}
+                        onPress = {() => this.props.navigation.navigate('Cupons')}
+                    >
                         <OpaIcons style={{marginRight: 10}} name='cupom' size={22} color= '#ff5c5c'/>
                         <Text style={estilo.textOptionsBlock}>Cupons</Text>
                     </TouchableOpacity>
