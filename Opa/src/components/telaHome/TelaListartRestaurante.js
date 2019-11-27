@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { View, Text, FlatList, TouchableOpacity } from 'react-native';
 import { Badge } from 'react-native-elements';
 
+import { Cabecalho } from '../commons/index';
+
 import * as firebase from 'firebase';
 import 'firebase/firestore';
 
@@ -50,14 +52,8 @@ class TelaListarRestaurante extends Component {
 
     render() {
         return (
-            <View style={{ flex: 1, width: '97%', paddingHorizontal: 15 }}>
-                <FlatList
-                    data={this.props.resultado}
-                    showsHorizontalScrollIndicator={false}
-                    renderItem={({ item }) => // <-- sem chaves aqui
-                        this.renderItemList(item.nome, item.key, item.nota, item.fotoURL)
-                    }
-                />
+            <View style={{ width: '97%', paddingHorizontal: 15 }}>
+                <Cabecalho />
             </View>
         )
     }

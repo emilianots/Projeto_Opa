@@ -31,7 +31,10 @@ const StackHome = createStackNavigator({
         screen: OpaTelaHome,
     },
     ListarRestaurantes: {
-        screen: TelaListarRestaurante
+        screen: TelaListarRestaurante,
+        navigationOptions:{
+            header: null
+        }
     },
 },
     {
