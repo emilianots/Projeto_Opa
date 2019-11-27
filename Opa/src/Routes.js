@@ -20,6 +20,7 @@ import {
     OpaTelaCardapio,
     OpaTelaPerfil
 } from './components/index';
+import {MigueScreen} from './components/commons/index';
 
 import { TelaListarRestaurante } from './components/telaHome/TelaListartRestaurante'
 import { ExplorarRestaurantes } from './components/telaReserva/ExplorarRestaurantes'
@@ -69,6 +70,16 @@ const StackReserva = createStackNavigator({
     }
 },
 )
+
+const StackQrcode = createStackNavigator({
+    Qrcodescanner: {
+        screen: OpaTelaQrcode,
+    },
+    MigueScreen: {
+        screen: MigueScreen
+
+    }
+})
 
 const TabNavigator = createBottomTabNavigator({
     Home: {

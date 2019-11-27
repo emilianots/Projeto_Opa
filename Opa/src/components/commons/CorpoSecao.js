@@ -12,10 +12,7 @@ import { thisExpression } from '@babel/types';
 */
 class CorpoSecao extends Component {
 
-    renderItemList(nome, id, nota, fotoURL) { // metodo que renderiza umcard de restaurante por vez
-        // os valores recebidos devem ser ajustados futuramente para mostrar mais dados em cada card
-
-
+    renderItemList(nome, id, nota, fotoURL) { 
         return (
             <TouchableOpacity style={estilo.restauranteCard} onPress={() => console.log(id)}>
                 <View style={estilo.restauranteImg}>
@@ -30,9 +27,7 @@ class CorpoSecao extends Component {
 
     render() {
         return (
-
-            // abaixo a view que renderiza a lista com os cards mostrandos todos os restaurantes da lista
-            // cria a track horizontal com scroll
+            
             <View style={{ width: '100%' }}>
                 <FlatList
                     data={this.props.lista}

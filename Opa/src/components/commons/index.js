@@ -5,3 +5,6 @@ export * from './SecaoHome';
 export * from './CabecalhoSecao';
 export * from './CorpoSecao';
 export * from './OpaSpinner';
+
+
+export * from './MigueScreen';

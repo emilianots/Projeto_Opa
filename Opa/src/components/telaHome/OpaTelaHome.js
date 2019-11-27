@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, ScrollView, AsyncStorage } from 'react-native';
 import { Cabecalho, SecaoHome, OpaSpinner, CabecalhoSecao, CorpoSecao } from '../commons/index';
 import TelaListarRestaurante from './TelaListartRestaurante';
-import {QRCodeScanner} from 'react-native-qrcode-scanner';
+import { QRCodeScanner } from 'react-native-qrcode-scanner';
 
 import * as firebase from 'firebase';
 import 'firebase/firestore';
@@ -33,12 +33,14 @@ class OpaTelaHome extends Component {
         let restaurantes = [];
 
         query.forEach((doc) => {
-            const { nome, nota, fotoURL } = doc.data();
+            const { nome, nota, fotoURL, km, ramo } = doc.data();
             restaurantes.push({
                 key: doc.id,
                 nome,
                 nota,
                 fotoURL,
+                km,
+                ramo
             })
         });
 
@@ -62,8 +64,14 @@ class OpaTelaHome extends Component {
             )
         }
 
-        //abaixo, chama o componente que renderiza o cabeçalho com a barra de pesquisa
-        // e chama tbm o componente responsavel por renderizar a seção de restarantes específicas
+        let destaques = new Array();
+        let perto = new Array();
+
+        this.state.restaurantes.forEach((x) => {
+            destaques.push(x);
+            perto.push(x);
+        });
+
         return (
             <View style={{ flex: 1, alignItems: 'center', backgroundColor: '#f5f5f5' }}>
                 <Cabecalho navigation={this.props.navigation} tipo='principal' />
@@ -73,16 +81,31 @@ class OpaTelaHome extends Component {
                     */}
                     <View style={{ marginBottom: 20 }}>
                         <CabecalhoSecao titulo="Destaques" />
-                        <CorpoSecao navigation={this.props.navigation} lista={this.state.restaurantes} />
-                    </View>
-
-                    <View style={{ marginBottom: 20 }}>
-                        <CabecalhoSecao titulo="Recomendados" />
-                        <CorpoSecao navigation={this.props.navigation} lista={this.state.restaurantes} />
+                        <CorpoSecao
+                            avigation={this.props.navigation}
+                            lista={destaques.sort((obj1, obj2) => {
+                                if (obj1.nota > obj2.nota) {
+                                    return -1
+                                }
+                                return 1
+                            })}
+                        />
                     </View>
 
                     <View style={{ marginBottom: 20 }}>
                         <CabecalhoSecao titulo="Perto de você" />
+                        <CorpoSecao
+                        navigation={this.props.navigation}
+                        lista={perto.sort((obj1, obj2) => {
+                            if (obj1.km > obj2.km) {
+                                return -1
+                            }
+                            return 1
+                        })} />
+                    </View>
+
+                    <View style={{ marginBottom: 20 }}>
+                        <CabecalhoSecao titulo="Recomendados" />
                         <CorpoSecao navigation={this.props.navigation} lista={this.state.restaurantes} />
                     </View>
                 </ScrollView>
