@@ -23,7 +23,7 @@ class OpaTelaComanda extends Component {
                 <View style={estilo.cabecalho2}>
                     <Text style={estilo.textTitulo}>Meus Pedidos</Text>
                     <Text style={estilo.textValor}>R${this.state.valor}</Text>
-                    <View style={{ flexDirection: 'row' }}>
+                    <View style={{ flexDirection: 'row', marginVertical: '10%' }}>
                         <TouchableOpacity
                             style={estilo.botaoSecundario}>
                             <Text style={estilo.botaoSecundarioTexto}>Detalhes</Text>

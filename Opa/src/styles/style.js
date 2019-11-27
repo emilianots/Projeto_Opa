@@ -19,7 +19,7 @@ const estilo = StyleSheet.create({
     },
 
     textValor: {
-        paddingTop: 20,
+        paddingTop: 10,
         fontSize: 30,
         color: '#fff'
     },
@@ -38,8 +38,7 @@ const estilo = StyleSheet.create({
     cabecalho2: {
         overflow: "visible",
         width: '100%',
-        height: '28%',
-        marginBottom: 20,
+        marginBottom: 15,
         paddingVertical: 10,
         paddingHorizontal: 20,
         backgroundColor: corPrimaria,
@@ -85,6 +84,7 @@ const estilo = StyleSheet.create({
     },
 
     containerPesquisa: {
+        flexDirection: 'row',
         width: '90%',
         height: 45,
         paddingHorizontal: 20,
@@ -92,6 +92,8 @@ const estilo = StyleSheet.create({
         borderRadius: 100,
         flexDirection: 'row',
         alignItems: 'center',
+        justifyContent: 'center'
+
 
     },
 
@@ -102,10 +104,10 @@ const estilo = StyleSheet.create({
 
     // boatao primario -----
     botaoPrimario: {
-        overflow: 'hidden',
         width: 130,
+        height: 40,
+        marginHorizontal: 10,
         padding: 10,
-        margin: 30,
         borderRadius: 100,
         borderWidth: 1,
         borderColor: '#fff',
@@ -121,10 +123,10 @@ const estilo = StyleSheet.create({
     },
 //botao secundario
     botaoSecundario: {
-        overflow: 'hidden',
         width: 130,
+        height: 40,
+        marginHorizontal: 10,
         padding: 10,
-        margin: 30,
         borderRadius: 100,
         borderWidth: 1,
         borderColor: '#fff',

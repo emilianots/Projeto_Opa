@@ -17,7 +17,7 @@ class OpaInput extends Component {
                     onFocus={this.props.onFocus}
                     onBlur={this.props.onFocus}
                 />
-                    <OpaIcons style={{marginRight: 10, top: 12, right: 30 }} name='lupa' size={22} color='#ff5c5c'/>
+                    <OpaIcons name='lupa' size={22} color='#ff5c5c'/>
             </View>
         )
     }
